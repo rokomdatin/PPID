@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* ============================================
+   PPID Website - Custom Styles
+   Warna Primary: #77212f (Burgundy)
+   Warna Secondary: #f0e9d8 (Khaki)
+   ============================================ */
+@layer components {
+    /* Navigation Link Style */
+    .nav-link {
+        @apply px-4 py-2 text-white font-medium rounded-md transition-colors duration-200 hover:bg-white/10;
+    }
+    
+    /* Dropdown Menu Container */
+    .dropdown-menu {
+        @apply absolute top-full left-0 mt-1 bg-white rounded-lg shadow-xl border border-gray-100 min-w-[220px] opacity-0 invisible translate-y-2 transition-all duration-200 z-50;
+    }
+    
+    /* Dropdown Menu Open State */
+    .dropdown-menu.open {
+        @apply opacity-100 visible translate-y-0;
+    }
+    
+    /* Dropdown Menu Item */
+    .dropdown-item {
+        @apply block px-4 py-3 text-gray-700 hover:bg-stone-100 hover:text-red-900 transition-colors duration-150 first:rounded-t-lg last:rounded-b-lg;
+    }
+    
+    /* Button Primary */
+    .btn-primary {
+        @apply inline-flex items-center justify-center px-6 py-3 bg-red-900 text-white font-medium rounded-lg hover:bg-red-900 transition-colors duration-200;
+    }
+    
+    /* Button Secondary */
+    .btn-secondary {
+        @apply inline-flex items-center justify-center px-6 py-3 bg-stone-100 text-red-900 font-medium rounded-lg hover:bg-stone-100 transition-colors duration-200;
+    }
+    
+    /* Button Outline */
+    .btn-outline {
+        @apply inline-flex items-center justify-center px-6 py-3 border-2 border-red-900 text-red-900 font-medium rounded-lg hover:bg-red-900 hover:text-white transition-colors duration-200;
+    }
+    
+    /* Card Component */
+    .card {
+        @apply bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden;
+    }
+    
+    /* Card Header */
+    .card-header {
+        @apply px-6 py-4 border-b border-gray-100;
+    }
+    
+    /* Card Body */
+    .card-body {
+        @apply p-6;
+    }
+    
+    /* Section Title */
+    .section-title {
+        @apply text-2xl lg:text-3xl font-bold text-red-900 mb-2;
+    }
+    
+    /* Section Subtitle */
+    .section-subtitle {
+        @apply text-gray-600 text-lg;
+    }
+}
+/* Hide elements with x-cloak attribute until Alpine.js initializes */
+[x-cloak] { 
+    display: none !important; 
+}
+
+@layer base {
+    :root {
+        --color-primary: 119 33 47;
+        --color-primary-foreground: 255 255 255;
+        --color-secondary: 240 233 216;
+        --color-secondary-foreground: 119 33 47;
+    }
+}
+@layer utilities {
+    .bg-primary {
+        background-color: rgb(var(--color-primary));
+    }
+    .bg-primary\/90 {
+        background-color: rgb(var(--color-primary) / 0.9);
+    }
+    .bg-primary\/70 {
+        background-color: rgb(var(--color-primary) / 0.7);
+    }
+    .bg-primary\/20 {
+        background-color: rgb(var(--color-primary) / 0.2);
+    }
+    .bg-secondary {
+        background-color: rgb(var(--color-secondary));
+    }
+    .bg-secondary\/30 {
+        background-color: rgb(var(--color-secondary) / 0.3);
+    }
+    .bg-secondary\/90 {
+        background-color: rgb(var(--color-secondary) / 0.9);
+    }
+    .text-primary {
+        color: rgb(var(--color-primary));
+    }
+    .text-secondary {
+        color: rgb(var(--color-secondary));
+    }
+    .text-primary-foreground {
+        color: rgb(var(--color-primary-foreground));
+    }
+    .text-secondary-foreground {
+        color: rgb(var(--color-secondary-foreground));
+    }
+    .border-primary {
+        border-color: rgb(var(--color-primary));
+    }
+    .border-secondary {
+        border-color: rgb(var(--color-secondary));
+    }
+    .hover\:bg-primary:hover {
+        background-color: rgb(var(--color-primary));
+    }
+    .hover\:bg-primary\/90:hover {
+        background-color: rgb(var(--color-primary) / 0.9);
+    }
+    .hover\:text-primary:hover {
+        color: rgb(var(--color-primary));
+    }
+    .from-primary\/90 {
+        --tw-gradient-from: rgb(var(--color-primary) / 0.9);
+    }
+    .to-primary\/70 {
+        --tw-gradient-to: rgb(var(--color-primary) / 0.7);
+    }
+    .group-hover\:text-primary:hover {
+        color: rgb(var(--color-primary));
+    }
+}
