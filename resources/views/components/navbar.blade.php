@@ -9,7 +9,6 @@
     <div class="container mx-auto px-4 ">
         <div class="flex items-center justify-between h-24 lg:h-28">
             
-            {{-- Logo --}}
             <a href="{{ url('/') }}" class="flex items-center gap-3">
                 <div class="flex items-center">
                 <img src="{{ asset('images/logoheadernavbar.png') }}" 
@@ -55,7 +54,7 @@
                         </svg>
                     </button>
                     <div class="dropdown-menu" :class="{ 'open': activeDropdown === 'layanan-informasi' }">
-                        <a href="{{ url('/layanan-informasi/permohonan-informasi') }}" class="dropdown-item">Permohonan Informasi</a>
+                        <a href="{{ route('formulir-permohonan') }}" class="dropdown-item">Permohonan Informasi</a>
                         <a href="{{ url('/layanan-informasi/pengajuan-keberatan') }}" class="dropdown-item">Pengajuan Keberatan</a>
                     </div>
                 </div>
@@ -79,7 +78,6 @@
                 </svg>
             </button>
         </div>
-        {{-- Mobile Navigation --}}
         <div x-show="mobileMenuOpen" 
             x-cloak
             x-transition:enter="transition ease-out duration-200"
@@ -91,21 +89,18 @@
             class="lg:hidden pb-4"
         >
             <div class="flex flex-col gap-1 pt-2">
-                {{-- Beranda --}}
                 <a href="{{ url('/') }}" 
                     @click="mobileMenuOpen = false"
                     class="block px-4 py-3 text-white font-medium hover:bg-white/10 rounded-md transition-colors">
                     Beranda
                 </a>
                 
-                {{-- Profil --}}
                 <a href="{{ url('/profil') }}"
                     @click="mobileMenuOpen = false" 
                     class="block px-4 py-3 text-white font-medium hover:bg-white/10 rounded-md transition-colors">
                     Profil
                 </a>
                 
-                {{-- Informasi Publik (Mobile Dropdown) --}}
                 <div>
                     <button @click="mobileDropdowns.includes('informasi-publik') 
                         ? mobileDropdowns = mobileDropdowns.filter(i => i !== 'informasi-publik') 
@@ -142,7 +137,6 @@
                     </div>
                 </div>
                 
-                {{-- Layanan Informasi (Mobile Dropdown) --}}
                 <div>
                     <button @click="mobileDropdowns.includes('layanan-informasi') 
                         ? mobileDropdowns = mobileDropdowns.filter(i => i !== 'layanan-informasi') 
@@ -161,12 +155,12 @@
                         x-transition
                         class="ml-4 mt-1 border-l-2 border-white/30 pl-4"
                     >
-                        <a href="{{ url('/layanan-informasi/permohonan-informasi') }}"
+                        <a href="{{ route('formulir-permohonan') }}"
                             @click="mobileMenuOpen = false"
                             class="block py-2.5 text-white/80 hover:text-white transition-colors">
                             Permohonan Informasi
                         </a>
-                        <a href="{{ url('/layanan-informasi/permohonan-keberatan') }}"
+                        <a href="{{ route('formulir-keberatan') }}"
                             @click="mobileMenuOpen = false"
                             class="block py-2.5 text-white/80 hover:text-white transition-colors">
                             Permohonan Keberatan
@@ -174,21 +168,18 @@
                     </div>
                 </div>
                 
-                {{-- Standar Pelayanan --}}
                 <a href="{{ url('/standar-pelayanan') }}"
                     @click="mobileMenuOpen = false"
                     class="block px-4 py-3 text-white font-medium hover:bg-white/10 rounded-md transition-colors">
                     Standar Pelayanan
                 </a>
                 
-                {{-- Regulasi --}}
                 <a href="{{ url('/regulasi') }}"
                     @click="mobileMenuOpen = false"
                     class="block px-4 py-3 text-white font-medium hover:bg-white/10 rounded-md transition-colors">
                     Regulasi
                 </a>
                 
-                {{-- FAQ --}}
                 <a href="{{ url('/faq') }}"
                     @click="mobileMenuOpen = false"
                     class="block px-4 py-3 text-white font-medium hover:bg-white/10 rounded-md transition-colors">

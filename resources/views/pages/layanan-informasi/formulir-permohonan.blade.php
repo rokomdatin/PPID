@@ -41,7 +41,7 @@
                     if (Object.keys(this.errors).length > 0) return;
                     this.loading = true;
                     try {
-                        const response = await fetch('/api/permohonan-informasi', {
+                        const response = await fetch('{{ route('permohonan-informasi.store') }}', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',

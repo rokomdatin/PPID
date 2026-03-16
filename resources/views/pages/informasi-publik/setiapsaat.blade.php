@@ -29,8 +29,7 @@
                                 [
                                     'kategori' => 'Informasi Tentang Peraturan, Keputusan Dan/atau Kebijakan Kemenko PM',
                                     'items' => [
-                                        ['label' => 'Daftar peraturan, keputusan dan/atau kebijakan yang telah diterbitkan di Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE2.pdf'],
-                                        ['label' => 'Peraturan, keputusan dan/atau kebijakan yang telah diterbitkan', 'url'   => 'https://jdih.pemberdayaan.go.id/']
+                                        ['label' => 'Daftar peraturan, keputusan dan/atau kebijakan yang telah diterbitkan di Kemenko PM', 'url'   => 'https://jdih.pemberdayaan.go.id/']
                                     ]
                                 ],
                                 [

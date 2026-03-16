@@ -24,7 +24,7 @@
             <span class="text-secondary">Pemberdayaan Masyarakat</span>
         </h1>
         <div class="flex flex-col items-center justify-center gap-4 mt-8 sm:flex-row">
-            <a href="/layanan-informasi/permohonan-informasi" class="btn-primary">
+            <a href="{{ route('formulir-permohonan') }}" class="btn-primary">
                 Ajukan Permohonan
             </a>
             <a href="#informasi-publik" class="btn-secondary">

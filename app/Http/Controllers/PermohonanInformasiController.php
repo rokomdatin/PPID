@@ -10,7 +10,7 @@ class PermohonanInformasiController extends Controller
      */
     public function index()
     {
-        return view('pages.formulir-permohonan');
+        return view('pages.layanan-informasi.formulir-permohonan');
     }
     /**
      * Memproses pengiriman formulir permohonan informasi.

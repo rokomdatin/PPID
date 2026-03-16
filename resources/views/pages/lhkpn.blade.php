@@ -14,11 +14,9 @@
     </div>
 </section>
 
-{{-- Main Content Section --}}
 <section class="py-8 bg-gray-50 min-h-screen">
     <div class="container px-4 mx-auto">
         
-        {{-- Information Box --}}
         <div class="mb-8 bg-secondary/50 border-l-4 border-primary rounded-r-xl p-6">
             <div class="flex items-start gap-4">
                 <div class="shrink-0">
@@ -36,8 +34,7 @@
                 </div>
             </div>
         </div>
-
-        {{-- LHKPN List --}}
+        
         <div class="space-y-4">
             @php
                 $lhkpnData = [
@@ -84,7 +81,6 @@
                     <div class="p-6">
                         <div class="flex flex-col lg:flex-row lg:items-center gap-4">
                             
-                            {{-- Icon/Avatar --}}
                             <div class="shrink-0">
                                 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                                     <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -92,8 +88,7 @@
                                     </svg>
                                 </div>
                             </div>
-
-                            {{-- Name and Position --}}
+                            
                             <div class="flex-1">
                                 <h3 class="text-lg font-semibold text-gray-900">
                                     {{ $item['nama'] }}
@@ -102,8 +97,7 @@
                                     {{ $item['jabatan'] }}
                                 </p>
                             </div>
-
-                            {{-- Download Button --}}
+                            
                             <div class="shrink-0">
                                 <a href="{{ route('lhkpn.download', ['filename' => $item['file_name']]) }}" 
                                    download="{{ $item['file_name'] }}"
@@ -119,8 +113,7 @@
                 </div>
             @endforeach
         </div>
-
-        {{-- Footer Information --}}
+        
         <div class="mt-8 bg-white rounded-xl shadow-sm border border-gray-100 p-6">
             <div class="flex items-start gap-4">
                 <div class="shrink-0">

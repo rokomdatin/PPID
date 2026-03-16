@@ -11,8 +11,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Halaman formulir
-Route::get('/formulir-permohonan', [PermohonanInformasiController::class, 'index'])
+Route::get('/layanan-informasi/permohonan-informasi', [PermohonanInformasiController::class, 'index'])
     ->name('formulir-permohonan');
+
+Route::redirect('/formulir-permohonan', '/layanan-informasi/permohonan-informasi');
+
 // API endpoint untuk submit form (AJAX)
 Route::post('/api/permohonan-informasi', [PermohonanInformasiController::class, 'store'])
     ->name('permohonan-informasi.store');
