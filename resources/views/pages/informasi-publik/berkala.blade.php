@@ -35,9 +35,15 @@
                                 [
                                     'kategori' => 'Ringkasan Informasi Tentang Program Dan/atau Kegiatan Yang Sedang Dijalankan Dalam Lingkup Kemenko PM',
                                     'items' => [
-                                        ['label' => 'Rencana Strategis Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE7.pdf'],
-                                        ['label' => 'Rencana Kerja Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE9.pdf'],
-                                        ['label' => 'Daftar Isian Pelaksanaan Anggaran (DIPA)', 'file_name' => 'TODO: GANTI_NAMA_FILE10.pdf'],
+                                        ['label' => 'Rencana Strategis Kemenko PM', 'file_name' => 'Buku Renstra 2025-2029.pdf'],
+                                        ['label' => 'Rencana Kerja Kemenko PM', 'subitems' => [
+                                                ['label' => 'Renja 2024', 'file_name' => 'Renja 2024.pdf'],
+                                                ['label' => 'Renja 2025', 'file_name' => 'Renja 2025.pdf'],
+                                            ]],
+                                        ['label' => 'Daftar Isian Pelaksanaan Anggaran (DIPA)', 'subitems' => [
+                                                ['label' => 'DIPA 2025', 'file_name' => 'DIPA Kemenko PM 2025.pdf'],
+                                                ['label' => 'DIPA 2026', 'file_name' => 'DIPA Kemenko PM 2026.pdf'],
+                                            ]],
                                         ['label' => 'Kegiatan Kemenko PM', 'url'   => 'https://pemberdayaan.go.id/pages/media']
                                     ]
                                 ],
@@ -57,11 +63,7 @@
                                     'kategori' => 'Ringkasan Informasi Tentang Kinerja Dalam Lingkup Kemenko PM',
                                     'items' => [
                                         [
-                                            'label'    => 'Rencana Kinerja Tahunan',
-                                            'subitems' => [
-                                                ['label' => 'Rencana Kinerja Tahun 2024', 'file_name' => 'TODO: GANTI_NAMA_FILE15-2023.pdf'],
-                                                ['label' => 'Rencana Kinerja Tahun 2025', 'file_name' => 'TODO: GANTI_NAMA_FILE15-2024.pdf'],
-                                            ],
+                                            'label'    => 'Rencana Kinerja Tahunan', 'file_name' => 'LKjIP_2025_Kemenko_PM.pdf'
                                         ]
                                     ]
                                 ],
