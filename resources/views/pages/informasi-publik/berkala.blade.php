@@ -21,6 +21,7 @@
                     <div x-show="activeTab === 'rincian'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
                         
                         @php
+                            $downloadType = 'berkala';
                             $informasiData = [
                                 [
                                     'kategori' => 'Informasi tentang Profil Kemenko PM',
@@ -131,7 +132,7 @@
                                                                 </button>
                                                                 <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
                                                                     @foreach($item['subitems'] as $sub)
-                                                                        <a href="{{ route('informasi.download', ['type' => 'berkala', 'filename' => $sub['file_name']]) }}" download="{{ $sub['file_name'] }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                                                        <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $sub['file_name']]) }}" download="{{ $sub['file_name'] }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                                                             {{ $sub['label'] }}
                                                                         </a>
                                                                     @endforeach
@@ -150,7 +151,7 @@
                                                                     LIHAT
                                                                 </a>
                                                             @else
-                                                                <a href="{{ route('informasi.download', ['type' => 'berkala', 'filename' => $item['file_name']]) }}"
+                                                                                     <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $item['file_name']]) }}"
                                                                    download="{{ $item['file_name'] }}"
                                                                    class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
                                                                     UNDUH

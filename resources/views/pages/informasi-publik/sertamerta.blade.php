@@ -19,6 +19,7 @@
                     <div x-show="activeTab === 'rincian'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100">
                         
                         @php
+                            $downloadType = 'sertamerta';
                             $informasiData = [
                                 [
                                     'kategori' => 'Informasi Bencana Alam',
@@ -55,7 +56,7 @@
                                                 @foreach ($data['items'] as $item)
                                                     <div class="flex items-center justify-between py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                                         <span class="text-gray-700">{{ $item['label'] }}</span>
-                                                        <a href="{{ route('informasi.download', ['type' => 'sertamerta', 'filename' => $item['file_name']]) }}" 
+                                                                          <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $item['file_name']]) }}" 
                                                            download="{{ $item['file_name'] }}"
                                                            class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
                                                             UNDUH

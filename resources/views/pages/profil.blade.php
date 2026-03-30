@@ -204,9 +204,6 @@
                             <h2 class="text-xl font-bold">Struktur Organisasi</h2>
                         </div>
                         <div class="p-6">
-                            <p class="mb-6 text-gray-700">
-                                Berikut adalah struktur organisasi PPID Kementerian Koordinator Bidang Pemberdayaan Masyarakat:
-                            </p>
                             <div class="p-8 mt-8 flex flex-col items-center justify-center">
                                 <img src="{{ asset('images/strukturdiagramppid.png') }}" 
                                     alt="Gambar Struktur Organisasi" 
