@@ -44,10 +44,15 @@
                     :style="'transform: translateX(-' + (activeSlide * 100) + '%)'"
                 >
                     @foreach ([1, 2, 3] as $slide)
+                        @php
+                            $slidePath = 'images/slider/slide-' . $slide . '.png';
+                            $fullSlidePath = public_path($slidePath);
+                            $slideVersion = file_exists($fullSlidePath) ? filemtime($fullSlidePath) : time();
+                        @endphp
                         <div class="flex-shrink-0 w-full">
                             <div class="relative aspect-[16/6] bg-gray-200 rounded-xl overflow-hidden">
                                 <img 
-                                    src="{{ asset('images/slider/slide-' . $slide . '.png') }}" 
+                                    src="{{ asset($slidePath) . '?v=' . $slideVersion }}" 
                                     alt="Slide {{ $slide }}"
                                     class="object-cover w-full h-full"
                                 >
