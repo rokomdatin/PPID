@@ -2,7 +2,7 @@
 @section('title', 'Regulasi - PPID Kemenko PM')
 @section('content')
 
-<section class="relative py-16 bg-gradient-to-r from-primary to-primary/80">
+<section class="relative pt-12 pb-16 lg:pt-14 bg-gradient-to-r from-primary to-primary/80">
     <div class="container px-4 mx-auto">
         <h1 class="text-3xl font-bold text-center text-primary md:text-4xl">Peraturan Terkait Informasi Publik</h1>
         <p class="mt-2 text-center text-primary">Kementerian Koordinator Bidang Pemberdayaan Masyarakat</p>
