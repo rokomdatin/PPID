@@ -132,9 +132,16 @@
                                                                 </button>
                                                                 <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
                                                                     @foreach($item['subitems'] as $sub)
-                                                                        <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $sub['file_name']]) }}" download="{{ $sub['file_name'] }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                                                            {{ $sub['label'] }}
-                                                                        </a>
+                                                                        @php $isTodoFile = isset($sub['file_name']) && \Illuminate\Support\Str::startsWith($sub['file_name'], 'TODO:'); @endphp
+                                                                        @if($isTodoFile)
+                                                                            <span class="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed" title="Dokumen belum tersedia">
+                                                                                {{ $sub['label'] }}
+                                                                            </span>
+                                                                        @else
+                                                                            <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $sub['file_name']]) }}" download="{{ $sub['file_name'] }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                                                                {{ $sub['label'] }}
+                                                                            </a>
+                                                                        @endif
                                                                     @endforeach
                                                                 </div>
                                                             </div>
@@ -151,11 +158,21 @@
                                                                     LIHAT
                                                                 </a>
                                                             @else
-                                                                                     <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $item['file_name']]) }}"
-                                                                   download="{{ $item['file_name'] }}"
-                                                                   class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
-                                                                    UNDUH
-                                                                </a>
+                                                                @php
+                                                                    $fileName = $item['file_name'] ?? '';
+                                                                    $isTodoFile = \Illuminate\Support\Str::startsWith($fileName, 'TODO:');
+                                                                @endphp
+                                                                @if($isTodoFile)
+                                                                    <span class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-gray-500 bg-gray-200 rounded-full cursor-not-allowed" title="Dokumen belum tersedia">
+                                                                        SEGERA TERSEDIA
+                                                                    </span>
+                                                                @else
+                                                                    <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $fileName]) }}"
+                                                                       download="{{ $fileName }}"
+                                                                       class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
+                                                                        UNDUH
+                                                                    </a>
+                                                                @endif
                                                             @endif
                                                         </div>
                                                     @endif

@@ -1,2 +1,12 @@
 *
 !.gitignore
+!berkala/
+!berkala/*.pdf
+!sertamerta/
+!sertamerta/*.pdf
+!setiapsaat/
+!setiapsaat/*.pdf
+!lhkpn/
+!lhkpn/*.pdf
+!regulasi/
+!regulasi/*.pdf

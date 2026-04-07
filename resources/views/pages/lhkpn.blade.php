@@ -54,11 +54,6 @@
                         'file_name' => 'LHKPN 2024_LEONTINUS ALPHA EDISON.pdf'
                     ],
                     [
-                        'nama' => 'Nunung Nuryartono',
-                        'jabatan' => 'Deputi Bidang Koordinasi Peningkatan Kesejahteraan Sosial',
-                        'file_name' => 'LHKPN 2024_NUNUNG NURYARTONO.pdf'
-                    ],
-                    [
                         'nama' => 'Abdul Haris',
                         'jabatan' => 'Deputi Bidang Koordinasi Pemberdayaan Masyarakat Desa, Daerah Tertinggal, dan Daerah Tertentu',
                         'file_name' => 'LHKPN 2024_ABDUL HARIS.pdf'
@@ -70,7 +65,7 @@
                     ],
                     [
                         'nama' => 'Dyah Tri Kumolosari',
-                        'jabatan' => 'Staf Ahli Menteri Bidang Hubungan Antar Lembaga dan Masyarakat',
+                        'jabatan' => 'Plt. Deputi Bidang Koordinasi Peningkatan Kesejahteraan Sosial dan Staf Ahli Menteri Bidang Hubungan Antar Lembaga dan Masyarakat',
                         'file_name' => 'LHKPN 2024_DYAH TRI KUMOLOSARI.pdf'
                     ]
                 ];

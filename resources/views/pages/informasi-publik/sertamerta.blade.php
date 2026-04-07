@@ -28,8 +28,8 @@
                                     ]
                                 ],
                                 [
-                                    'kategori' => 'Informasi Keadaan Bencana Nonalam',
-                                    'items' => [
+                                    'kategori' => 'Informasi Keadaan Bencana Non Alam',
+                                    'items' => [ 
                                         ['label' => 'Status Kedaruratan Kesehatan Masyarakat', 'file_name' => 'TODO: GANTI_NAMA_FILE4.pdf']
                                     ]
                                 ],
@@ -56,11 +56,21 @@
                                                 @foreach ($data['items'] as $item)
                                                     <div class="flex items-center justify-between py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                                         <span class="text-gray-700">{{ $item['label'] }}</span>
-                                                                          <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $item['file_name']]) }}" 
-                                                           download="{{ $item['file_name'] }}"
-                                                           class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
-                                                            UNDUH
-                                                        </a>
+                                                        @php
+                                                            $fileName = $item['file_name'] ?? '';
+                                                            $isTodoFile = \Illuminate\Support\Str::startsWith($fileName, 'TODO:');
+                                                        @endphp
+                                                        @if($isTodoFile)
+                                                            <span class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-gray-500 bg-gray-200 rounded-full cursor-not-allowed" title="Dokumen belum tersedia">
+                                                                SEGERA TERSEDIA
+                                                            </span>
+                                                        @else
+                                                            <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $fileName]) }}" 
+                                                               download="{{ $fileName }}"
+                                                               class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
+                                                                UNDUH
+                                                            </a>
+                                                        @endif
                                                     </div>
                                                 @endforeach
                                             </div>

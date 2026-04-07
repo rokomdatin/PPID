@@ -39,14 +39,14 @@
                                         ['label' => 'Pedoman pengelolaan organisasi, administrasi, personil dan keuangan', 'file_name' => 'Kepmenko No 1 Tahun 2025.pdf'],
                                         ['label' => 'Profil Pimpinan dan Pegawai', 'url'   => 'https://pemberdayaan.go.id/pages/tentang/struktur'],
                                         ['label' => 'Anggaran Badan Publik secara umum maupun anggaran secara khusus pada unit pelaksanaan teknis serta laporan keuangannya', 'file_name' => 'TODO: GANTI_NAMA_FILE6.pdf'],
-                                        ['label' => 'Data statistik yang dibuat dan dikelola oleh Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE7.pdf'],
+                                        ['label' => 'Data statistik yang dibuat dan dikelola oleh Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE8.pdf' ],
                                         ['label' => 'Neraca', 'file_name' => 'TODO: GANTI_NAMA_FILE8.pdf']
                                     ]
                                 ],
                                 [
                                     'kategori' => 'Surat menyurat pimpinan atau pejabat dalam rangka pelaksanaan tugas, fungsi dan wewenangnya Kemenko PM',
                                     'items' => [
-                                        ['label' => 'Rekapitulasi surat menyurat pimpinan (Informasi tersedia berdasarkan permintaan)', 'file_name' => 'TODO: GANTI_NAMA_FILE12.pdf']
+                                        ['label' => 'Rekapitulasi surat menyurat pimpinan (Informasi tersedia berdasarkan permintaan)', 'url' => route('formulir-permohonan')]
                                     ]
                                 ],
                                 [
@@ -61,8 +61,8 @@
                                         [
                                             'label'    => 'Agenda Pimpinan Satuan Kerja (Informasi tersedia berdasarkan permintaan)',
                                             'subitems' => [
-                                                ['label' => 'Agenda Kegiatan Pimpinan', 'file_name' => 'TODO: GANTI_NAMA_FILE14-2023.pdf'],
-                                                ['label' => 'Agenda Kegiatan Sekretaris', 'file_name' => 'TODO: GANTI_NAMA_FILE14-2024.pdf'],
+                                                ['label' => 'Agenda Kegiatan Pimpinan', 'url' => route('formulir-permohonan')],
+                                                ['label' => 'Agenda Kegiatan Sekretaris', 'url' => route('formulir-permohonan')],
                                             ],
                                         ]
                                     ]
@@ -106,9 +106,27 @@
                                                                 </button>
                                                                 <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
                                                                     @foreach($item['subitems'] as $sub)
-                                                                        <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $sub['file_name']]) }}" download="{{ $sub['file_name'] }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                                                            {{ $sub['label'] }}
-                                                                        </a>
+                                                                        @php
+                                                                            $subUrl = $sub['url'] ?? null;
+                                                                            $subFileName = $sub['file_name'] ?? null;
+                                                                            $isExternalSubUrl = $subUrl && \Illuminate\Support\Str::startsWith($subUrl, ['http://', 'https://']);
+                                                                            $isTodoSubFile = $subFileName && \Illuminate\Support\Str::startsWith($subFileName, 'TODO:');
+                                                                        @endphp
+                                                                        @if($subUrl)
+                                                                            <a href="{{ $subUrl }}"
+                                                                               @if($isExternalSubUrl) target="_blank" rel="noopener" @endif
+                                                                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                                                                {{ $sub['label'] }}
+                                                                            </a>
+                                                                        @elseif($subFileName && !$isTodoSubFile)
+                                                                            <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $subFileName]) }}" download="{{ $subFileName }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                                                                {{ $sub['label'] }}
+                                                                            </a>
+                                                                        @elseif($subFileName)
+                                                                            <span class="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed" title="Dokumen belum tersedia">
+                                                                                {{ $sub['label'] }}
+                                                                            </span>
+                                                                        @endif
                                                                     @endforeach
                                                                 </div>
                                                             </div>
@@ -125,11 +143,21 @@
                                                                     LIHAT
                                                                 </a>
                                                             @else
-                                                                                     <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $item['file_name']]) }}"
-                                                                   download="{{ $item['file_name'] }}"
-                                                                   class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
-                                                                    UNDUH
-                                                                </a>
+                                                                @php
+                                                                    $fileName = $item['file_name'] ?? '';
+                                                                    $isTodoFile = \Illuminate\Support\Str::startsWith($fileName, 'TODO:');
+                                                                @endphp
+                                                                @if($isTodoFile)
+                                                                    <span class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-gray-500 bg-gray-200 rounded-full cursor-not-allowed" title="Dokumen belum tersedia">
+                                                                        SEGERA TERSEDIA
+                                                                    </span>
+                                                                @else
+                                                                    <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $fileName]) }}"
+                                                                       download="{{ $fileName }}"
+                                                                       class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
+                                                                        UNDUH
+                                                                    </a>
+                                                                @endif
                                                             @endif
                                                         </div>
                                                     @endif
