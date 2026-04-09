@@ -2,12 +2,7 @@
 @section('title', 'Standar Pelayanan - PPID Kemenko PM')
 @section('content')
 {{-- Header Section --}}
-<section class="bg-secondary text-primary py-12">
-    <div class="container mx-auto px-4">
-        <h1 class="text-3xl md:text-4xl font-bold mb-2">Standar Pelayanan Informasi Publik</h1>
-        <p class="text-primary text-lg">Kementerian Koordinator Bidang Pemberdayaan Masyarakat</p>
-    </div>
-</section>
+
 <section class="py-12 bg-gray-50">
     <div class="container mx-auto px-4">
         <div x-data="{ activeTab: 'maklumatpelayanan' }" class="flex flex-col lg:flex-row gap-8">
