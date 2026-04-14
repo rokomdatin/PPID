@@ -38,8 +38,8 @@
                                     'items' => [
                                         ['label' => 'Rencana Strategis Kemenko PM', 'file_name' => 'Buku Renstra 2025-2029.pdf'],
                                         ['label' => 'Rencana Kerja Kemenko PM', 'subitems' => [
-                                                ['label' => 'Renja 2024', 'file_name' => 'Renja 2024.pdf'],
                                                 ['label' => 'Renja 2025', 'file_name' => 'Renja 2025.pdf'],
+                                                ['label' => 'Renja 2026', 'file_name' => 'Renja 2026.pdf'],
                                             ]],
                                         ['label' => 'Daftar Isian Pelaksanaan Anggaran (DIPA)', 'subitems' => [
                                                 ['label' => 'DIPA 2025', 'file_name' => 'DIPA Kemenko PM 2025.pdf'],
