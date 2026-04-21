@@ -208,12 +208,6 @@
                     <button @click="showSuccess = false" class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-xl transition-all">Tutup</button>
                 </div>
             </div>
-
-            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <div class="w-full aspect-4/5 overflow-hidden">
-                    <img src="{{ asset('images/prosedur-pengajuan-keberatan.jpeg') }}" alt="Prosedur Pengajuan Keberatan Informasi Publik" class="w-full h-full object-cover">
-                </div>
-            </div>
         </div>
     </section>
 
