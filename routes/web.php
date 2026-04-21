@@ -1,11 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\RegulasController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\LhkpnController;
 
 require __DIR__.'/permohonan.php';
+
+Route::get('/profil/download/{filename}', function ($filename) {
+    if (str_contains($filename, '..') || str_contains($filename, '/') || str_contains($filename, '\\')) {
+        abort(403, 'Akses ditolak');
+    }
+
+    $path = storage_path('app/public/' . $filename);
+
+    if (!file_exists($path)) {
+        abort(404, 'File tidak ditemukan');
+    }
+
+    return response()->download($path);
+})->name('profil.download');
 
 Route::get('/regulasi/download/{filename}', [RegulasController::class, 'download'])
     ->name('regulasi.download');

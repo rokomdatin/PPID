@@ -100,7 +100,7 @@
                                     </li>
                                     <li class="flex items-start gap-2">
                                         <span class="mt-1.5 w-2 h-2 bg-primary rounded-full shrink-0"></span>
-                                        <a href="{{ asset('storage/Kepses 11 Tahun 2025.pdf') }}" download="Kepses-11-2025.pdf" class="text-blue-600 hover:underline">
+                                        <a href="{{ route('profil.download', ['filename' => 'Kepses 11 Tahun 2025.pdf']) }}" class="font-medium text-blue-600 underline hover:text-blue-800">
                                             Kepses No. 11 Tahun 2025
                                         </a>
                                     </li>
