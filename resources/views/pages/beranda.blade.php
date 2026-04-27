@@ -11,7 +11,7 @@
             alt="Hero Background" 
             class="object-cover w-full h-full"
         >
-        <div class="absolute inset-0 z-10 bg-linear-to-r from-primary/90 to-primary/70"></div>
+        <div class="absolute inset-0 z-10 bg-black/20"></div>
     </div>
 
     
@@ -49,8 +49,8 @@
                             $fullSlidePath = public_path($slidePath);
                             $slideVersion = file_exists($fullSlidePath) ? filemtime($fullSlidePath) : time();
                         @endphp
-                        <div class="flex-shrink-0 w-full">
-                            <div class="relative aspect-[16/6] bg-gray-200 rounded-xl overflow-hidden">
+                        <div class="shrink-0 w-full">
+                            <div class="relative aspect-16/6 bg-gray-200 rounded-xl overflow-hidden">
                                 <img 
                                     src="{{ asset($slidePath) . '?v=' . $slideVersion }}" 
                                     alt="Slide {{ $slide }}"
@@ -130,7 +130,7 @@
             @foreach ($cards as $card)
                 <div class="card group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                     
-                    <div class="relative overflow-hidden aspect-[4/3]">
+                    <div class="relative overflow-hidden aspect-4/3">
                         <img 
                             src="{{ asset('images/cards/' . $card['img'] . '.png') }}" 
                             alt="{{ $card['title'] }}"

@@ -2,10 +2,10 @@
 @section('title', 'Profil - PPID Kemenko PM')
 @section('content')
 
-<section class="relative pt-16 bg-linear-to-r from-primary to-primary/80">
+<section class="relative pt-16 pb-10 bg-secondary">
     <div class="container px-4 mx-auto">
-        <h1 class="text-3xl font-bold text-center text-red-900 md:text-4xl">Profil PPID Kementerian Koordinator Bidang Pemberdayaan Masyarakat</h1>
-        <p class="mt-2 text-center text-red-900">Pejabat Pengelola Informasi dan Dokumentasi</p>
+        <h1 class="text-3xl font-bold text-center text-primary md:text-4xl">Profil PPID Kementerian Koordinator Bidang Pemberdayaan Masyarakat</h1>
+        <p class="mt-2 text-center text-primary">Pejabat Pengelola Informasi dan Dokumentasi</p>
     </div>
 </section>
 
@@ -117,7 +117,7 @@
                             <div class="mb-8">
                                 <h3 class="mb-4 text-lg font-bold text-primary">Visi</h3>
                                 <div class="p-6 text-center rounded-lg bg-linear-to-r from-primary to-primary/80">
-                                    <p class="text-lg italic text-red-900">
+                                    <p class="text-lg italic text-white">
                                         "Sinkronisasi dan Koordinasi serta Pengenddalian Efektif dalam Pemberdayaan Masyarakat yang Inklusif dan Berkelanjutan Menuju Indonesia Emas 2045."
                                     </p>
                                 </div>

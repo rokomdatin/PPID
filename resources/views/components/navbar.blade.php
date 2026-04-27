@@ -4,7 +4,7 @@
     mobileDropdowns: []
 }" 
     @click.outside="activeDropdown = null"
-    class="bg-red-900 shadow-lg sticky top-0 z-50"
+    class="bg-primary shadow-lg sticky top-0 z-50"
 >
     <div class="container mx-auto px-4 ">
         <div class="flex items-center justify-between h-24 lg:h-28">

@@ -1,4 +1,4 @@
-<footer class="bg-red-900 text-white">
+<footer class="bg-primary text-white">
     <div class="container mx-auto px-4 py-12 lg:py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             
@@ -15,7 +15,7 @@
                 
                 <div class="space-y-4">
                     <div class="flex items-start gap-3">
-                        <svg class="w-5 h-5 mt-1 flex-shrink-0 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 mt-1 shrink-0 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
@@ -28,7 +28,7 @@
                     </div>
                     
                     <div class="flex items-start gap-3">
-                        <svg class="w-5 h-5 mt-1 flex-shrink-0 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 mt-1 shrink-0 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                         <div>
@@ -47,7 +47,7 @@
                     <a href="https://wa.me/628111133067" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="w-12 h-12 bg-white/10 hover:bg-stone-100 hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
+                        class="w-12 h-12 bg-white/10 hover:bg-secondary hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
                         title="WhatsApp"
                     >
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -58,7 +58,7 @@
                     <a href="https://instagram.com/kemenkopmri" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="w-12 h-12 bg-white/10 hover:bg-stone-100 hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
+                        class="w-12 h-12 bg-white/10 hover:bg-secondary hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
                         title="Instagram"
                     >
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -69,7 +69,7 @@
                     <a href="https://www.facebook.com/p/Kementerian-Koordinator-Bidang-Pemberdayaan-Masyarakat-61575330386550/" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="w-12 h-12 bg-white/10 hover:bg-stone-100 hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
+                        class="w-12 h-12 bg-white/10 hover:bg-secondary hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
                         title="Facebook"
                     >
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -80,7 +80,7 @@
                     <a href="https://x.com/kemenkopmRI?s=20" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="w-12 h-12 bg-white/10 hover:bg-stone-100 hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
+                        class="w-12 h-12 bg-white/10 hover:bg-secondary hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
                         title="X (Twitter)"
                     >
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -91,7 +91,7 @@
                     <a href="https://www.youtube.com/@Kemenkopmri" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="w-12 h-12 bg-white/10 hover:bg-stone-100 hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
+                        class="w-12 h-12 bg-white/10 hover:bg-secondary hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
                         title="YouTube"
                     >
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -102,7 +102,7 @@
                     <a href="https://www.tiktok.com/@kemenkopm" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        class="w-12 h-12 bg-white/10 hover:bg-stone-100 hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
+                        class="w-12 h-12 bg-white/10 hover:bg-secondary hover:text-primary rounded-full flex items-center justify-center transition-all duration-200 group"
                         title="TikTok"
                     >
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
