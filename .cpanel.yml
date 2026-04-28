@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/$USER/public_html
+    - cd $DEPLOYPATH
+    - composer install --optimize-autoloader --no-dev --quiet
+    - php artisan migrate --force
+    - php artisan optimize
+    - php artisan filament:upgrade
+    - chmod -R 775 storage bootstrap/cache

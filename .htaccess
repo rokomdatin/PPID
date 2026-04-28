@@ -1,0 +1,21 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block direct access to /public/ URL path
+    RewriteRule ^public(/.*)?$ - [F,L]
+
+    # Block access to sensitive directories
+    RewriteRule ^(app|bootstrap|config|database|node_modules|resources|routes|storage|tests|vendor)(/.*)?$ - [F,L]
+
+    # Block access to sensitive files
+    RewriteRule ^(artisan|composer\.json|composer\.lock|package\.json|package-lock\.json|vite\.config\.js|phpunit\.xml|\.cpanel\.yml|\.gitignore|README\.md)$ - [F,L]
+
+    # Block .env and hidden files
+    RewriteRule ^\.env - [F,L]
+    RewriteRule ^\.git - [F,L]
+
+    # Internally rewrite all other requests to public/ subdirectory
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
+</IfModule>
