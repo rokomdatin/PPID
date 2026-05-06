@@ -117,11 +117,8 @@
                         </div>
                         <div class="p-6 space-y-6">
                             <div class="p-6 space-y-4">
-                                <p class="text-gray-600 leading-relaxed">
-                                    Berikut adalah mekanisme pelayanan informasi publik di PPID Kementerian Koordinator Bidang Pemberdayaan Masyarakat:
-                                </p>
                                 <div class="mt-4 rounded-xl overflow-hidden border border-gray-200 shadow-2xl">
-                                    <img src="/images/maklumatppid.png" alt="Maklumat PPID Kemenko PM" class="w-full h-auto">
+                                    <img src="/images/maklumat-ppid-desktop.jpg" alt="Maklumat PPID Kemenko PM" class="w-full h-auto">
                                 </div>
                             </div>
                         </div>

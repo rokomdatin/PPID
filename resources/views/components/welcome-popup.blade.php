@@ -54,12 +54,20 @@
         </button>
         
         {{-- Image Section --}}
-        <div class="relative h-120 sm:h-140 overflow-hidden">
-            <img 
-                src="{{ $image ?? '/images/maklumatppid.png' }}" 
-                alt="{{ $imageAlt ?? 'Selamat Datang' }}"
-                class="w-full h-full object-cover"
-            >
+        <div class="relative overflow-hidden">
+            <picture>
+                {{-- Mobile image (portrait) --}}
+                <source 
+                    media="(max-width: 639px)" 
+                    srcset="{{ $imageMobile ?? '/images/maklumat-ppid-mobile.jpg' }}"
+                >
+                {{-- Desktop image (landscape) --}}
+                <img 
+                    src="{{ $image ?? '/images/maklumat-ppid-desktop.jpg' }}" 
+                    alt="{{ $imageAlt ?? 'Selamat Datang' }}"
+                    class="w-full h-auto sm:h-140 sm:object-cover"
+                >
+            </picture>
             {{-- Gradient Overlay --}}
             <div class="absolute inset-0 bg-linear-to-t from-black/40 to-transparent"></div>
         </div>
