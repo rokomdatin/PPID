@@ -117,7 +117,7 @@
                             <div class="mb-8">
                                 <h3 class="mb-4 text-lg font-bold text-primary">Visi</h3>
                                 <div class="p-6 text-center rounded-lg bg-linear-to-r from-primary to-primary/80">
-                                    <p class="text-lg italic text-white">
+                                    <p class="text-lg italic text-primary">
                                         "Sinkronisasi dan Koordinasi serta Pengenddalian Efektif dalam Pemberdayaan Masyarakat yang Inklusif dan Berkelanjutan Menuju Indonesia Emas 2045."
                                     </p>
                                 </div>
