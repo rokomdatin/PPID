@@ -242,9 +242,6 @@
                             <h2 class="text-xl font-semibold">Mekanisme Pelayanan</h2>
                         </div>
                         <div class="p-6 space-y-4">
-                            <p class="text-gray-600 leading-relaxed">
-                                Berikut adalah mekanisme pelayanan informasi publik di PPID Kementerian Koordinator Bidang Pemberdayaan Masyarakat:
-                            </p>
                             {{-- Kontainer Gambar --}}
                             <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
                                 <img src="/images/mekanisme-pelayanan.jpg" alt="Mekanisme Permohonan Informasi Publik" class="w-full h-auto">
@@ -261,9 +258,6 @@
                             <h2 class="text-xl font-semibold">Standar Operasional Pelayanan</h2>
                         </div>
                         <div class="p-6 space-y-4">
-                            <p class="text-gray-600 leading-relaxed">
-                                Berikut adalah Standar Operasional Pelayanan (SOP) PPID Kementerian Koordinator Bidang Pemberdayaan Masyarakat:
-                            </p>
                             <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
                                 <img src="/images/sop-ppid.jpg" alt="Standar Operasional Pelayanan PPID" class="w-full h-auto">
                             </div>
