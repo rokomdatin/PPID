@@ -58,18 +58,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                                 </svg>
-                                Mekanisme Pelayanan
-                            </span>
-                        </button>
-                        <button 
-                            @click="activeTab = 'standaroperasional'"
-                            :class="activeTab === 'standaroperasional' ? 'bg-secondary text-primary font-semibold border-l-4 border-primary' : 'text-gray-700 hover:bg-gray-50'"
-                            class="px-4 py-3 text-left transition-all duration-200">
-                            <span class="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                </svg>
-                                Standar Operasional Pelayanan
+                                Mekanisme dan Standar Operasional Pelayanan
                             </span>
                         </button>
                     </div>
@@ -239,7 +228,7 @@
                 <div x-show="activeTab === 'mekanismepelayanan'" x-cloak>
                     <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
                         <div class="bg-primary text-white px-6 py-4">
-                            <h2 class="text-xl font-semibold">Mekanisme Pelayanan</h2>
+                            <h2 class="text-xl font-semibold">Mekanisme dan Standar Pelayanan Operasional</h2>
                         </div>
                         <div class="p-6 space-y-4">
                             {{-- Kontainer Gambar --}}
@@ -248,18 +237,6 @@
                             </div>
                             <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
                                 <img src="/images/mekanisme-pelayanan.jpg" alt="Mekanisme Penyalahgunaan Wewenang" class="w-full h-auto">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div x-show="activeTab === 'standaroperasional'" x-cloak>
-                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-                        <div class="bg-primary text-white px-6 py-4">
-                            <h2 class="text-xl font-semibold">Standar Operasional Pelayanan</h2>
-                        </div>
-                        <div class="p-6 space-y-4">
-                            <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
-                                <img src="/images/sop-ppid.jpg" alt="Standar Operasional Pelayanan PPID" class="w-full h-auto">
                             </div>
                         </div>
                     </div>

@@ -15,7 +15,7 @@ class KeberatanInformasiController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nomor_permohonan' => 'required|string|max:255',
-            'tujuan_penggunaan' => 'required|string',
+            'tujuan_penggunaan' => 'nullable|string',
             'nama_pemohon' => 'required|string|max:255',
             'alamat_pemohon' => 'required|string',
             'telepon_pemohon' => 'required|string|max:20',

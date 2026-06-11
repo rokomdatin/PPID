@@ -23,7 +23,6 @@
             
             const payload = {
                 nomor_permohonan: form.nomor_permohonan.value,
-                tujuan_penggunaan: form.tujuan_penggunaan.value,
                 nama_pemohon: form.nama_pemohon.value,
                 alamat_pemohon: form.alamat_pemohon.value,
                 telepon_pemohon: form.telepon_pemohon.value,
@@ -35,7 +34,6 @@
             };
 
             if (!payload.nomor_permohonan) this.errors.nomor_permohonan = 'Nomor permohonan wajib diisi';
-            if (!payload.tujuan_penggunaan) this.errors.tujuan_penggunaan = 'Tujuan penggunaan wajib diisi';
             if (!payload.nama_pemohon) this.errors.nama_pemohon = 'Nama pemohon wajib diisi';
             if (!payload.alamat_pemohon) this.errors.alamat_pemohon = 'Alamat pemohon wajib diisi';
             if (!payload.telepon_pemohon) this.errors.telepon_pemohon = 'Nomor telepon pemohon wajib diisi';
@@ -90,22 +88,12 @@
                     
                     <div>
                         <label for="nomor_permohonan" class="block text-sm font-semibold text-gray-700 mb-2">
-                            Nomor Permohonan Informasi <span class="text-red-500">*</span>
+                            Nomor Registrasi Permohonan Informasi <span class="text-red-500">*</span>
                         </label>
                         <input type="text" name="nomor_permohonan" id="nomor_permohonan"
                             class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all"
                             placeholder="Masukkan nomor registrasi permohonan informasi">
                         <p x-show="errors.nomor_permohonan" x-text="errors.nomor_permohonan" class="text-red-500 text-xs mt-1"></p>
-                    </div>
-
-                    <div>
-                        <label for="tujuan_penggunaan" class="block text-sm font-semibold text-gray-700 mb-2">
-                            Tujuan Penggunaan Informasi <span class="text-red-500">*</span>
-                        </label>
-                        <textarea name="tujuan_penggunaan" id="tujuan_penggunaan" rows="3"
-                            class="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all resize-none"
-                            placeholder="Jelaskan tujuan penggunaan informasi"></textarea>
-                        <p x-show="errors.tujuan_penggunaan" x-text="errors.tujuan_penggunaan" class="text-red-500 text-xs mt-1"></p>
                     </div>
 
                     <div class="border-t border-gray-100 pt-4">

@@ -24,7 +24,7 @@
                                 [
                                     'kategori' => 'Daftar Informasi Publik Kemenko PM',
                                     'items' => [
-                                        ['label' => 'Daftar Informasi Publik', 'file_name' => 'TODO: GANTI_NAMA_FILE1.pdf']
+                                        ['label' => 'Daftar Informasi Publik', 'file_name' => 'SK DIP.pdf']
                                     ]
                                 ],
                                 [
@@ -39,8 +39,7 @@
                                         ['label' => 'Pedoman pengelolaan organisasi, administrasi, personil dan keuangan', 'file_name' => 'Kepmenko No 1 Tahun 2025.pdf'],
                                         ['label' => 'Profil Pimpinan dan Pegawai', 'url'   => 'https://pemberdayaan.go.id/pages/tentang/struktur'],
                                         ['label' => 'Anggaran Badan Publik secara umum maupun anggaran secara khusus pada unit pelaksanaan teknis serta laporan keuangannya', 'file_name' => 'TODO: GANTI_NAMA_FILE6.pdf'],
-                                        ['label' => 'Data statistik yang dibuat dan dikelola oleh Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE8.pdf' ],
-                                        ['label' => 'Neraca', 'file_name' => 'TODO: GANTI_NAMA_FILE8.pdf']
+                                        ['label' => 'Data statistik yang dibuat dan/atau dikelola oleh Kemenko PM', 'url' => 'https://jdih.pemberdayaan.go.id/' ]
                                     ]
                                 ],
                                 [

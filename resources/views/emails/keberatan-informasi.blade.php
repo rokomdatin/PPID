@@ -54,7 +54,7 @@
                                 </tr>
                                 <tr>
                                     <td style="padding: 8px 0; color: #6b7280; vertical-align: top;">Tujuan Penggunaan</td>
-                                    <td style="padding: 8px 0; color: #1f2937; font-weight: 500;">{{ $keberatan['tujuan_penggunaan'] }}</td>
+                                    <td style="padding: 8px 0; color: #1f2937; font-weight: 500;">{{ $keberatan['tujuan_penggunaan'] ?? '-' }}</td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 8px 0; color: #6b7280;">Status Awal</td>
