@@ -124,12 +124,12 @@
                             class="block py-2.5 text-white/80 hover:text-white transition-colors">
                             Informasi Berkala
                         </a>
-                        <a href="{{ url('/informasi-publik/tersedia-setiap-saat') }}"
+                        <a href="{{ url('/informasi-publik/setiapsaat') }}"
                             @click="mobileMenuOpen = false"
                             class="block py-2.5 text-white/80 hover:text-white transition-colors">
                             Informasi Tersedia Setiap Saat
                         </a>
-                        <a href="{{ url('/informasi-publik/serta-merta') }}"
+                        <a href="{{ url('/informasi-publik/sertamerta') }}"
                             @click="mobileMenuOpen = false"
                             class="block py-2.5 text-white/80 hover:text-white transition-colors">
                             Informasi Serta Merta
