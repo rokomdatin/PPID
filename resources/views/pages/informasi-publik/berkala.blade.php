@@ -83,8 +83,8 @@
                                 [
                                     'kategori' => 'Informasi tentang prosedur memperoleh Informasi Publik',
                                     'items' => [
-                                        ['label' => 'Tata cara memperoleh Informasi Publik', 'file_name' => 'TODO: GANTI_NAMA_FILE22.pdf'],
-                                        ['label' => 'Tata cara pengajuan keberatan dan proses penyelesaian sengketa Informasi Publik berikut pihak-pihak yang bertanggungjawab yang dapat dihubungi', 'file_name' => 'TODO: GANTI_NAMA_FILE22.pdf']
+                                        ['label' => 'Tata cara memperoleh Informasi Publik', 'download_type' => 'standaroperasional', 'file_name' => 'Konsultasi dan Audiensi.png'],
+                                        ['label' => 'Tata cara pengajuan keberatan dan proses penyelesaian sengketa Informasi Publik berikut pihak-pihak yang bertanggungjawab yang dapat dihubungi', 'download_type' => 'standaroperasional', 'file_name' => 'Rapat Koordinasi.png']
                                     ]
                                 ],
                                 [
@@ -161,13 +161,14 @@
                                                                 @php
                                                                     $fileName = $item['file_name'] ?? '';
                                                                     $isTodoFile = \Illuminate\Support\Str::startsWith($fileName, 'TODO:');
+                                                                    $itemDownloadType = $item['download_type'] ?? $downloadType;
                                                                 @endphp
                                                                 @if($isTodoFile)
                                                                     <span class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-gray-500 bg-gray-200 rounded-full cursor-not-allowed" title="Dokumen belum tersedia">
                                                                         SEGERA TERSEDIA
                                                                     </span>
                                                                 @else
-                                                                    <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $fileName]) }}"
+                                                                    <a href="{{ route('informasi.download', ['type' => $itemDownloadType, 'filename' => $fileName]) }}"
                                                                        download="{{ $fileName }}"
                                                                        class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
                                                                         UNDUH

@@ -232,12 +232,33 @@
                         </div>
                         <div class="p-6 space-y-4">
                             {{-- Kontainer Gambar --}}
-                            <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
-                                <img src="/images/mekanisme-pelayanan.jpg" alt="Mekanisme Permohonan Informasi Publik" class="w-full h-auto">
+                            <div class="grid gap-6 lg:grid-cols-4 lg:divide-x lg:divide-gray-300">
+                                <div class="px-0 lg:px-4 lg:pr-6">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Standar Operasional Penyediaan Data</h3>
+                                    <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
+                                        <img src="/images/standaroperasional/penyediaan-data-dan-informasi.png" alt="Mekanisme Permohonan Informasi Publik" class="w-full h-auto">
+                                    </div>
+                                </div>
+                                <div class="px-0 lg:px-4 lg:pr-6">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Standar Operasional Konsultasi dan Audiensi</h3>
+                                    <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
+                                        <img src="/images/standaroperasional/konsultasi-dan-audiensi.png" alt="Mekanisme Konsultasi dan Audiensi" class="w-full h-auto">
+                                    </div>
+                                </div>
+                                <div class="px-0 lg:px-4 lg:pr-6">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Standar Operasional Rapat Koordinasi</h3>
+                                    <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
+                                        <img src="/images/standaroperasional/rapat-koordinasi.png" alt="Mekanisme Rapat Koordinasi" class="w-full h-auto">
+                                    </div>
+                                </div>
+                                <div class="px-0 lg:px-4">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Standar Operasional Pelaporan</h3>
+                                    <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
+                                        <img src="/images/standaroperasional/pengaduan-pelayanan-publik.png" alt="Mekanisme Pelaporan" class="w-full h-auto">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
-                                <img src="/images/mekanisme-pelayanan.jpg" alt="Mekanisme Penyalahgunaan Wewenang" class="w-full h-auto">
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

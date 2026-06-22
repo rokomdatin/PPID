@@ -14,7 +14,7 @@ class InformasiController extends Controller
     public function download($type, $filename)
     {
         // Validasi type
-        if (!in_array($type, ['berkala', 'sertamerta', 'setiapsaat'])) {
+        if (!in_array($type, ['berkala', 'sertamerta', 'setiapsaat', 'standaroperasional'])) {
             abort(403, 'Akses ditolak');
         }
 
@@ -32,6 +32,6 @@ class InformasiController extends Controller
         }
 
         // Download file dengan nama asli
-        return Storage::disk('public')->download($filepath);
+        return response()->download(Storage::disk('public')->path($filepath));
     }
 }
