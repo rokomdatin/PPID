@@ -64,7 +64,7 @@
                                     'kategori' => 'Ringkasan Informasi Tentang Kinerja Dalam Lingkup Kemenko PM',
                                     'items' => [
                                         [
-                                            'label'    => 'Rencana Kinerja Tahunan', 'file_name' => 'LKjIP_2025_Kemenko_PM.pdf'
+                                            'label'    => 'Laporan Kinerja Tahunan', 'file_name' => 'LKjIP_2025_Kemenko_PM.pdf'
                                         ]
                                     ]
                                 ],
@@ -102,7 +102,7 @@
                                 [
                                     'kategori' => 'Informasi tentang ketenagakerjaan',
                                     'items' => [
-                                        ['label' => 'Statistik Kepegawaian Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE22.pdf']
+                                        ['label' => 'Statistik Kepegawaian Kemenko PM', 'file_name' => 'Data Statistik Kepegawaian Kemenko PM.pdf']
                                     ]
                                 ]
                             ];
