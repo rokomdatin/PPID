@@ -70,22 +70,6 @@
                         'file_name' => 'Undang-Undang Nomor 14 Tahun 2008.pdf'
                     ],
                     [
-                        'tahun' => '2010',
-                        'kategori' => 'keputusan',
-                        'nomor' => 'Peraturan Pemerintah No.61 Tahun 2010',
-                        'judul' => 'Tentang Pelaksanaan Undang - Undang Keterbukaan Informasi Publik',
-                        'tipe' => 'Document',
-                        'file_name' => 'Permenko Nomor 5 Tahun 2025 tentang Standar Layanan Informasi Publik.pdf'
-                    ],
-                    [
-                        'tahun' => '2011',
-                        'kategori' => 'keputusan',
-                        'nomor' => 'Perma No 2 Tahun 2011',
-                        'judul' => 'Tentang Tata Cara Penyelesaian Sengketa Informasi Publik di Pengadilan',
-                        'tipe' => 'Document',
-                        'file_name' => 'Permenko Nomor 5 Tahun 2025 tentang Standar Layanan Informasi Publik.pdf'
-                    ],
-                    [
                         'tahun' => '2025',
                         'kategori' => 'peraturan-menteri',
                         'nomor' => 'Permenko Nomor 5 Tahun 2025 tentang Standar Layanan Informasi Publik',
