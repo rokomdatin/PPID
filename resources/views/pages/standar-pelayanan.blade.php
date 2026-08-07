@@ -61,6 +61,17 @@
                                 Mekanisme dan Standar Operasional Pelayanan
                             </span>
                         </button>
+                        <button 
+                            @click="activeTab = 'privacypolicy'"
+                            :class="activeTab === 'privacypolicy' ? 'bg-secondary text-primary font-semibold border-l-4 border-primary' : 'text-gray-700 hover:bg-gray-50'"
+                            class="px-4 py-3 text-left transition-all duration-200">
+                            <span class="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                                Kebijakan Privasi
+                            </span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -259,6 +270,37 @@
                                 </div>
                             </div>
                             
+                        </div>
+                    </div>
+                </div>
+                <div x-show="activeTab === 'privacypolicy'" x-cloak>
+                    <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+                        <div class="bg-primary text-white px-6 py-4">
+                            <h2 class="text-xl font-semibold">Kebijakan Privasi</h2>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <p class="text-gray-600 leading-relaxed">
+                                Dokumen kebijakan privasi dapat dilihat langsung di bawah ini. Jika diperlukan, Anda juga dapat membukanya dalam tab baru melalui tombol unduh.
+                            </p>
+
+                            <div class="rounded-xl border border-gray-200 overflow-hidden">
+                                <iframe
+                                    src="{{ asset('storage/regulasi/Privacy Policy Kemenko PM.pdf') }}"
+                                    class="w-full min-h-[700px]"
+                                    frameborder="0"
+                                    title="Dokumen Kebijakan Privasi">
+                                </iframe>
+                            </div>
+
+                            <a href="{{ asset('storage/regulasi/Privacy Policy Kemenko PM.pdf') }}"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                Unduh Dokumen PDF
+                            </a>
                         </div>
                     </div>
                 </div>
