@@ -28,9 +28,19 @@
                                         'items' => [
                                         ['label' => 'Profil Kemenko PM', 'url'   => 'https://pemberdayaan.go.id/pages/tentang/profil'],
                                         ['label' => 'Profil PPID', 'url'   => route('profil') . '#profil'],
-                                        ['label' => 'Laporan Harta Kekayaan Pejabat Negara', 'url'   => route('lhkpn')],
+                                        ['label' => 'Laporan Harta Kekayaan Pejabat Negara (LHKPN)', 'url'   => route('lhkpn')],
                                         ['label' => 'Struktur Organisasi PPID Kemenko PM', 'url'   => route('profil') . '#struktur'],
                                         ['label' => 'Tugas dan Fungsi Unit Kerja', 'file_name' => 'Permenko Pemberdayaan Masyarakat Nomor 1 Tahun 2024.pdf'],
+                                    ]
+                                ],
+                                [
+                                    'kategori' => 'Informasi Khusus Lainnya yang Berkaitan Langsung dengan Hak-Hak Masyarakat',
+                                        'items' => [
+                                        ['label' => 'SP4N Lapor!', 'url'   => 'https://www.lapor.go.id/'],
+                                        ['label' => 'JDIH', 'url'   => 'https://jdih-dev.pemberdayaan.go.id/'],
+                                        ['label' => 'e-LHKPN', 'url'   => 'https://elhkpn.kpk.go.id/portal/user/login#'],
+                                        ['label' => 'Dashboard Agregat DTSEN', 'url'   => 'https://dashboard-dtsen.pemberdayaan.go.id/'],
+                                        ['label' => 'Dashboard Desa Prioritas', 'url'   => 'https://desaprioritas.pemberdayaan.go.id/'],
                                     ]
                                 ],
                                 [
@@ -41,11 +51,8 @@
                                                 ['label' => 'Renja 2025', 'file_name' => 'Renja 2025.pdf'],
                                                 ['label' => 'Renja 2026', 'file_name' => 'Renja 2026.pdf'],
                                             ]],
-                                        ['label' => 'Daftar Isian Pelaksanaan Anggaran (DIPA)', 'subitems' => [
-                                                ['label' => 'DIPA 2025', 'file_name' => 'DIPA Kemenko PM 2025.pdf'],
-                                                ['label' => 'DIPA 2026', 'file_name' => 'DIPA Kemenko PM 2026.pdf'],
-                                            ]],
-                                        ['label' => 'Kegiatan Kemenko PM', 'url'   => 'https://pemberdayaan.go.id/pages/media']
+                                        
+                                        ['label' => 'Kegiatan Kemenko PM', 'file_name' => 'Kegiatan Kemenko PM Tahun 2026.pdf']
                                     ]
                                 ],
                                 [
@@ -54,17 +61,29 @@
                                         [
                                             'label'    => 'Laporan Keuangan Tahunan',
                                             'subitems' => [
-                                                ['label' => 'Laporan Keuangan Tahun 2024', 'file_name' => 'TODO: GANTI_NAMA_FILE14-2023.pdf'],
-                                                ['label' => 'Laporan Keuangan Tahun 2025', 'file_name' => 'TODO: GANTI_NAMA_FILE14-2024.pdf'],
+                                                ['label' => '2024', 'file_name' => 'TODO: GANTI_NAMA_FILE14-2023.pdf'],
+                                                ['label' => '2025', 'file_name' => 'LKKL 2025.pdf'],
                                             ],
                                         ],
+                                        ['label' => 'Daftar Isian Pelaksanaan Anggaran (DIPA)', 'subitems' => [
+                                                ['label' => 'DIPA 2025', 'file_name' => 'DIPA Kemenko PM 2025.pdf'],
+                                                ['label' => 'DIPA 2026', 'file_name' => 'DIPA Kemenko PM 2026.pdf'],
+                                            ]],
+                                        ['label' => 'Rencana Kerja dan Anggaran (RKA)', 'subitems' => [
+                                                ['label' => 'RKA 2025', 'file_name' => 'TODO: GANTI_NAMA_FILE14-2024.pdf'],
+                                                ['label' => 'RKA 2026', 'file_name' => 'RKA KL Pagu Alokasi Anggaran 2026.pdf'],
+                                            ]],
+                                        ['label' => 'Informasi realisasi atau penyerapan penggunaan keuangan Tahun 2026', 'subitems' => [
+                                                ['label' => 'Laporan Realisasi Anggaran 2025', 'file_name' => 'TODO: GANTI_NAMA_FILE14-2024.pdf'],
+                                                ['label' => 'Laporan Realisasi Anggaran 2026', 'file_name' => 'Laporan Realisasi Anggaran 2026.pdf'],
+                                            ]],
                                     ]
                                 ],
                                 [
                                     'kategori' => 'Ringkasan Informasi Tentang Kinerja Dalam Lingkup Kemenko PM',
                                     'items' => [
                                         [
-                                            'label'    => 'Laporan Kinerja Tahunan', 'file_name' => 'LKjIP_2025_Kemenko_PM.pdf'
+                                            'label'    => 'Laporan Kinerja Tahunan', 'file_name' => 'Laporan Capaian Kinerja Kemenko PM 2026.pdf'
                                         ]
                                     ]
                                 ],
@@ -90,7 +109,7 @@
                                 [
                                     'kategori' => 'Informasi tentang tata cara pengaduan penyalahgunaan wewenang atau pelanggaran oleh Kemenko PM',
                                     'items' => [
-                                        ['label' => 'Tata cara pengaduan penyalahgunaan wewenang atau pelanggaran oleh Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE22.pdf']
+                                        ['label' => 'Tata cara pengaduan penyalahgunaan wewenang atau pelanggaran oleh Kemenko PM', 'url'   => route('standar-pelayanan') . '#mekanismepelayanan']
                                     ]
                                 ],
                                 [
@@ -121,40 +140,49 @@
                                             <div class="space-y-3">
                                                 @foreach ($data['items'] as $item)
                                                     @if(isset($item['subitems']))
-                                                        <div class="flex items-center justify-between py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                                                            <span class="text-gray-700">{{ $item['label'] }}</span>
+                                                        <div class="flex items-center justify-between gap-4 py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                                            <span class="min-w-0 flex-1 text-gray-700">{{ $item['label'] }}</span>
                                                             <div x-data="{ open:false }" class="relative">
-                                                                <button @click="open = !open" class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
+                                                                <button @click="open = !open" class="inline-flex items-center justify-center gap-1 rounded-full bg-primary px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-primary/90 sm:text-sm">
                                                                     PILIH
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                                                     </svg>
                                                                 </button>
-                                                                <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
+                                                                <div x-show="open" @click.away="open = false" class="absolute right-0 z-10 mt-2 w-72 max-w-[calc(100vw-2rem)] rounded-xl border border-gray-200 bg-white shadow-lg">
                                                                     @foreach($item['subitems'] as $sub)
-                                                                        @php $isTodoFile = isset($sub['file_name']) && \Illuminate\Support\Str::startsWith($sub['file_name'], 'TODO:'); @endphp
-                                                                        @if($isTodoFile)
+                                                                        @php
+                                                                            $subFileName = $sub['file_name'] ?? null;
+                                                                            $subUrl = $sub['url'] ?? null;
+                                                                            $subIsTodoFile = $subFileName && \Illuminate\Support\Str::startsWith($subFileName, 'TODO:');
+                                                                            $subPreviewUrl = $subFileName ? route('informasi.preview', ['type' => $downloadType, 'filename' => $subFileName]) : null;
+                                                                        @endphp
+                                                                        @if($subUrl)
+                                                                            <a href="{{ $subUrl }}" target="_blank" rel="noopener" class="block border-b border-gray-100 px-4 py-3 text-sm text-gray-700 transition hover:bg-gray-50 last:border-0">
+                                                                                {{ $sub['label'] }}
+                                                                            </a>
+                                                                        @elseif($subFileName && !$subIsTodoFile)
+                                                                            <a href="{{ $subPreviewUrl }}" class="block border-b border-gray-100 px-4 py-3 text-sm text-gray-700 transition hover:bg-gray-50 last:border-0">
+                                                                                {{ $sub['label'] }}
+                                                                            </a>
+                                                                        @else
                                                                             <span class="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed" title="Dokumen belum tersedia">
                                                                                 {{ $sub['label'] }}
                                                                             </span>
-                                                                        @else
-                                                                            <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $sub['file_name']]) }}" download="{{ $sub['file_name'] }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                                                                                {{ $sub['label'] }}
-                                                                            </a>
                                                                         @endif
                                                                     @endforeach
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     @else
-                                                        <div class="flex items-center justify-between py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                                                            <span class="text-gray-700">{{ $item['label'] }}</span>
+                                                        <div class="flex items-center justify-between gap-4 py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                                            <span class="min-w-0 flex-1 text-gray-700">{{ $item['label'] }}</span>
                                                             @php $url = $item['url'] ?? null; @endphp
                                                             @if($url)
                                                                 @php $isExternal = \Illuminate\Support\Str::startsWith($url, ['http://','https://']); @endphp
                                                                 <a href="{{ $url }}" 
                                                                    @if($isExternal) target="_blank" rel="noopener" @endif
-                                                                   class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
+                                                                   class="inline-flex h-9 min-w-[76px] shrink-0 items-center justify-center rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-primary/90 sm:text-sm">
                                                                     LIHAT
                                                                 </a>
                                                             @else
@@ -162,16 +190,15 @@
                                                                     $fileName = $item['file_name'] ?? '';
                                                                     $isTodoFile = \Illuminate\Support\Str::startsWith($fileName, 'TODO:');
                                                                     $itemDownloadType = $item['download_type'] ?? $downloadType;
+                                                                    $previewRoute = route('informasi.preview', ['type' => $itemDownloadType, 'filename' => $fileName]);
                                                                 @endphp
                                                                 @if($isTodoFile)
-                                                                    <span class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-gray-500 bg-gray-200 rounded-full cursor-not-allowed" title="Dokumen belum tersedia">
+                                                                    <span class="inline-flex h-9 min-w-[76px] shrink-0 items-center justify-center rounded-full bg-gray-200 px-4 py-2 text-xs font-medium text-gray-500 cursor-not-allowed sm:text-sm" title="Dokumen belum tersedia">
                                                                         SEGERA TERSEDIA
                                                                     </span>
                                                                 @else
-                                                                    <a href="{{ route('informasi.download', ['type' => $itemDownloadType, 'filename' => $fileName]) }}"
-                                                                       download="{{ $fileName }}"
-                                                                       class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
-                                                                        UNDUH
+                                                                    <a href="{{ $previewRoute }}" class="inline-flex h-9 min-w-[76px] shrink-0 items-center justify-center rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-primary/90 sm:text-sm">
+                                                                        LIHAT
                                                                     </a>
                                                                 @endif
                                                             @endif

@@ -25,6 +25,12 @@ Route::get('/profil/download/{filename}', function ($filename) {
 Route::get('/regulasi/download/{filename}', [RegulasController::class, 'download'])
     ->name('regulasi.download');
 
+Route::get('/informasi/preview/{type}/{filename}', [InformasiController::class, 'preview'])
+    ->name('informasi.preview');
+
+Route::get('/informasi/file/{type}/{filename}', [InformasiController::class, 'file'])
+    ->name('informasi.file');
+
 Route::get('/informasi/download/{type}/{filename}', [InformasiController::class, 'download'])
     ->name('informasi.download');
 

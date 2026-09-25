@@ -30,7 +30,8 @@
                                 [
                                     'kategori' => 'Informasi Tentang Peraturan, Keputusan Dan/atau Kebijakan Kemenko PM',
                                     'items' => [
-                                        ['label' => 'Daftar peraturan, keputusan dan/atau kebijakan yang telah diterbitkan di Kemenko PM', 'url'   => 'https://jdih.pemberdayaan.go.id/']
+                                        ['label' => 'Daftar peraturan, keputusan dan/atau kebijakan yang telah diterbitkan di Kemenko PM', 'url'   => 'https://jdih-dev.pemberdayaan.go.id/'],
+                                        ['label' => 'Daftar rancangan dan tahap pembentukan peraturan perundang-undangan, keputusan, dan/atau kebijakan yang sedang dalam proses pembuatan', 'file_name' => 'Daftar Rancangan Peraturan Keputusan Kebijakan yang Sedang Diproses.pdf']
                                     ]
                                 ],
                                 [
@@ -94,16 +95,16 @@
                                             <div class="space-y-3">
                                                 @foreach ($data['items'] as $item)
                                                     @if(isset($item['subitems']))
-                                                        <div class="flex items-center justify-between py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                                                            <span class="text-gray-700">{{ $item['label'] }}</span>
+                                                        <div class="flex items-center justify-between gap-4 py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                                            <span class="min-w-0 flex-1 text-gray-700">{{ $item['label'] }}</span>
                                                             <div x-data="{ open:false }" class="relative">
-                                                                <button @click="open = !open" class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
+                                                                <button @click="open = !open" class="inline-flex items-center justify-center gap-1 rounded-full bg-primary px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-primary/90 sm:text-sm">
                                                                     PILIH
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                                                     </svg>
                                                                 </button>
-                                                                <div x-show="open" @click.away="open = false" class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
+                                                                <div x-show="open" @click.away="open = false" class="absolute right-0 z-10 mt-2 w-72 max-w-[calc(100vw-2rem)] rounded-xl border border-gray-200 bg-white shadow-lg">
                                                                     @foreach($item['subitems'] as $sub)
                                                                         @php
                                                                             $subUrl = $sub['url'] ?? null;
@@ -112,16 +113,14 @@
                                                                             $isTodoSubFile = $subFileName && \Illuminate\Support\Str::startsWith($subFileName, 'TODO:');
                                                                         @endphp
                                                                         @if($subUrl)
-                                                                            <a href="{{ $subUrl }}"
-                                                                               @if($isExternalSubUrl) target="_blank" rel="noopener" @endif
-                                                                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                                                            <a href="{{ $subUrl }}" @if($isExternalSubUrl) target="_blank" rel="noopener" @endif class="block border-b border-gray-100 px-4 py-3 text-sm text-gray-700 transition hover:bg-gray-50 last:border-0">
                                                                                 {{ $sub['label'] }}
                                                                             </a>
                                                                         @elseif($subFileName && !$isTodoSubFile)
-                                                                            <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $subFileName]) }}" download="{{ $subFileName }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                                                            <a href="{{ route('informasi.preview', ['type' => $downloadType, 'filename' => $subFileName]) }}" class="block border-b border-gray-100 px-4 py-3 text-sm text-gray-700 transition hover:bg-gray-50 last:border-0">
                                                                                 {{ $sub['label'] }}
                                                                             </a>
-                                                                        @elseif($subFileName)
+                                                                        @else
                                                                             <span class="block px-4 py-2 text-sm text-gray-400 cursor-not-allowed" title="Dokumen belum tersedia">
                                                                                 {{ $sub['label'] }}
                                                                             </span>
@@ -131,14 +130,14 @@
                                                             </div>
                                                         </div>
                                                     @else
-                                                        <div class="flex items-center justify-between py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                                                            <span class="text-gray-700">{{ $item['label'] }}</span>
+                                                        <div class="flex items-center justify-between gap-4 py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                                            <span class="min-w-0 flex-1 text-gray-700">{{ $item['label'] }}</span>
                                                             @php $url = $item['url'] ?? null; @endphp
                                                             @if($url)
                                                                 @php $isExternal = \Illuminate\Support\Str::startsWith($url, ['http://','https://']); @endphp
                                                                 <a href="{{ $url }}" 
                                                                    @if($isExternal) target="_blank" rel="noopener" @endif
-                                                                   class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
+                                                                   class="inline-flex h-9 min-w-[76px] shrink-0 items-center justify-center rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-primary/90 sm:text-sm">
                                                                     LIHAT
                                                                 </a>
                                                             @else
@@ -147,14 +146,12 @@
                                                                     $isTodoFile = \Illuminate\Support\Str::startsWith($fileName, 'TODO:');
                                                                 @endphp
                                                                 @if($isTodoFile)
-                                                                    <span class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-gray-500 bg-gray-200 rounded-full cursor-not-allowed" title="Dokumen belum tersedia">
+                                                                    <span class="inline-flex h-9 min-w-[76px] shrink-0 items-center justify-center rounded-full bg-gray-200 px-4 py-2 text-xs font-medium text-gray-500 cursor-not-allowed sm:text-sm" title="Dokumen belum tersedia">
                                                                         SEGERA TERSEDIA
                                                                     </span>
                                                                 @else
-                                                                    <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $fileName]) }}"
-                                                                       download="{{ $fileName }}"
-                                                                       class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
-                                                                        UNDUH
+                                                                    <a href="{{ route('informasi.preview', ['type' => $downloadType, 'filename' => $fileName]) }}" class="inline-flex h-9 min-w-[76px] shrink-0 items-center justify-center rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-primary/90 sm:text-sm">
+                                                                        LIHAT
                                                                     </a>
                                                                 @endif
                                                             @endif

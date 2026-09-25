@@ -54,21 +54,19 @@
                                         <div class="lg:w-2/3">
                                             <div class="space-y-3">
                                                 @foreach ($data['items'] as $item)
-                                                    <div class="flex items-center justify-between py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                                                        <span class="text-gray-700">{{ $item['label'] }}</span>
+                                                    <div class="flex items-center justify-between gap-4 py-3 px-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                                        <span class="min-w-0 flex-1 text-gray-700">{{ $item['label'] }}</span>
                                                         @php
                                                             $fileName = $item['file_name'] ?? '';
                                                             $isTodoFile = \Illuminate\Support\Str::startsWith($fileName, 'TODO:');
                                                         @endphp
                                                         @if($isTodoFile)
-                                                            <span class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-gray-500 bg-gray-200 rounded-full cursor-not-allowed" title="Dokumen belum tersedia">
+                                                            <span class="inline-flex h-9 min-w-[76px] shrink-0 items-center justify-center rounded-full bg-gray-200 px-4 py-2 text-xs font-medium text-gray-500 cursor-not-allowed sm:text-sm" title="Dokumen belum tersedia">
                                                                 SEGERA TERSEDIA
                                                             </span>
                                                         @else
-                                                            <a href="{{ route('informasi.download', ['type' => $downloadType, 'filename' => $fileName]) }}" 
-                                                               download="{{ $fileName }}"
-                                                               class="inline-flex items-center justify-center px-4 py-1.5 text-xs font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors">
-                                                                UNDUH
+                                                            <a href="{{ route('informasi.preview', ['type' => $downloadType, 'filename' => $fileName]) }}" class="inline-flex h-9 min-w-[76px] shrink-0 items-center justify-center rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-primary/90 sm:text-sm">
+                                                                LIHAT
                                                             </a>
                                                         @endif
                                                     </div>

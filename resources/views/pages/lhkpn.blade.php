@@ -35,35 +35,56 @@
             </div>
         </div>
         
+        @php
+            $selectedYear = request()->query('tahun', '2024');
+        @endphp
+
+        <form method="GET" action="{{ route('lhkpn') }}" class="mb-6">
+            <label for="tahun" class="block mb-2 text-sm font-semibold text-gray-700">
+                Pilih Tahun LHKPN
+            </label>
+            <select id="tahun" name="tahun" onchange="this.form.submit()"
+                    class="w-full md:w-auto min-w-52 px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-700 focus:border-primary focus:ring-primary">
+                <option value="2024" @selected($selectedYear === '2024')>LHKPN 2024</option>
+                <option value="2025" @selected($selectedYear === '2025')>LHKPN 2025</option>
+            </select>
+        </form>
+
         <div class="space-y-4">
             @php
                 $lhkpnData = [
                     [
+                        'tahun' => '2024',
                         'nama' => 'Abdul Muhaimin Iskandar',
                         'jabatan' => 'Menteri Koordinator Bidang Pemberdayaan Masyarakat',
                         'file_name' => 'LHKPN 2024_Abdul Muhaimin Iskandar.pdf'
                     ],
                     [
+                        'tahun' => '2024',
                         'nama' => 'Andie Megantara',
                         'jabatan' => 'Sekretaris Kementerian Koordinator Bidang Pemberdayaan Masyarakat',
                         'file_name' => 'LHKPN 2024_ANDIE MEGANTARA.pdf'
                     ],
                     [
+                        'tahun' => '2025',
                         'nama' => 'Leontinus Alpha Edison',
                         'jabatan' => 'Deputi Bidang Koordinasi Pemberdayaan Ekonomi Masyarakat dan Pelindungan Pekerja Migran',
-                        'file_name' => 'LHKPN 2024_LEONTINUS ALPHA EDISON.pdf'
+                        'file_name' => 'LHKPN 2025_LEONTINUS ALPHA EDISON.pdf'
                     ],
                     [
+                        'tahun' => '2024',
                         'nama' => 'Abdul Haris',
                         'jabatan' => 'Deputi Bidang Koordinasi Pemberdayaan Masyarakat Desa, Daerah Tertinggal, dan Daerah Tertentu',
                         'file_name' => 'LHKPN 2024_ABDUL HARIS.pdf'
                     ],
                     [
+                        'tahun' => '2025',
                         'nama' => 'Sugeng Bahagijo',
                         'jabatan' => 'Staf Ahli Menteri Bidang Pembangunan Ekonomi dan Digitalisasi',
-                        'file_name' => 'LHKPN 2024_SUGENG BAHAGIJO.pdf'
+                        'file_name' => 'LHKPN 2025_SUGENG BAHAGIJO.pdf'
                     ],
                     [
+                        'tahun' => '2024',
                         'nama' => 'Dyah Tri Kumolosari',
                         'jabatan' => 'Plt. Deputi Bidang Koordinasi Peningkatan Kesejahteraan Sosial dan Staf Ahli Menteri Bidang Hubungan Antar Lembaga dan Masyarakat',
                         'file_name' => 'LHKPN 2024_DYAH TRI KUMOLOSARI.pdf'
@@ -72,6 +93,7 @@
             @endphp
 
             @foreach ($lhkpnData as $item)
+                @continue($item['tahun'] !== $selectedYear)
                 <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
                     <div class="p-6">
                         <div class="flex flex-col lg:flex-row lg:items-center gap-4">

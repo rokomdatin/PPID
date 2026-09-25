@@ -11,7 +11,7 @@
     <div class="container mx-auto px-4">
         <div x-data="{ activeTab: 'maklumatpelayanan' }" class="flex flex-col lg:flex-row gap-8">
             
-            <div class="lg:w-1/3">
+            <div class="lg:w-1/4">
                 <div class="bg-white rounded-2xl shadow-sm overflow-hidden top-24">
                     <div class="bg-primary text-white px-6 py-4">
                         <h3 class="font-semibold text-lg">Menu Pelayanan PPID</h3>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:w-2/3">
+            <div class="lg:w-3/4">
                 
                 <!-- <div x-show="activeTab === 'standarlayanan'" x-cloak>
                     <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
@@ -241,35 +241,61 @@
                         <div class="bg-primary text-white px-6 py-4">
                             <h2 class="text-xl font-semibold">Mekanisme dan Standar Pelayanan Operasional</h2>
                         </div>
-                        <div class="p-6 space-y-4">
-                            {{-- Kontainer Gambar --}}
-                            <div class="grid gap-6 lg:grid-cols-4 lg:divide-x lg:divide-gray-300">
-                                <div class="px-0 lg:px-4 lg:pr-6">
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Standar Operasional Penyediaan Data</h3>
-                                    <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
-                                        <img src="/images/standaroperasional/penyediaan-data-dan-informasi.png" alt="Mekanisme Permohonan Informasi Publik" class="w-full h-auto">
+                        <div class="p-4 sm:p-6" x-data="{ activeAccordion: 'penyediaan-data' }">
+                            <div class="space-y-3">
+                                <div class="overflow-hidden rounded-xl border border-gray-200">
+                                    <button type="button" @click="activeAccordion = activeAccordion === 'penyediaan-data' ? null : 'penyediaan-data'" class="flex w-full items-center justify-between gap-4 bg-gray-50 px-4 py-4 text-left font-semibold text-gray-900 transition hover:bg-secondary sm:px-5" :aria-expanded="activeAccordion === 'penyediaan-data'">
+                                        <span>Standar Operasional Penyediaan Data</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition-transform" :class="activeAccordion === 'penyediaan-data' ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    <div x-show="activeAccordion === 'penyediaan-data'" x-transition class="border-t border-gray-200 p-3 sm:p-5">
+                                        <div class="overflow-hidden rounded-xl border border-gray-200">
+                                            <img src="/images/standaroperasional/penyediaan-data-dan-informasi.png" alt="Mekanisme Permohonan Informasi Publik" class="h-auto w-full">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="px-0 lg:px-4 lg:pr-6">
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Standar Operasional Konsultasi dan Audiensi</h3>
-                                    <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
-                                        <img src="/images/standaroperasional/konsultasi-dan-audiensi.png" alt="Mekanisme Konsultasi dan Audiensi" class="w-full h-auto">
+                                <div class="overflow-hidden rounded-xl border border-gray-200">
+                                    <button type="button" @click="activeAccordion = activeAccordion === 'konsultasi-audiensi' ? null : 'konsultasi-audiensi'" class="flex w-full items-center justify-between gap-4 bg-gray-50 px-4 py-4 text-left font-semibold text-gray-900 transition hover:bg-secondary sm:px-5" :aria-expanded="activeAccordion === 'konsultasi-audiensi'">
+                                        <span>Standar Operasional Konsultasi dan Audiensi</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition-transform" :class="activeAccordion === 'konsultasi-audiensi' ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    <div x-show="activeAccordion === 'konsultasi-audiensi'" x-transition class="border-t border-gray-200 p-3 sm:p-5">
+                                        <div class="overflow-hidden rounded-xl border border-gray-200">
+                                            <img src="/images/standaroperasional/konsultasi-dan-audiensi.png" alt="Mekanisme Konsultasi dan Audiensi" class="h-auto w-full">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="px-0 lg:px-4 lg:pr-6">
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Standar Operasional Rapat Koordinasi</h3>
-                                    <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
-                                        <img src="/images/standaroperasional/rapat-koordinasi.png" alt="Mekanisme Rapat Koordinasi" class="w-full h-auto">
+                                <div class="overflow-hidden rounded-xl border border-gray-200">
+                                    <button type="button" @click="activeAccordion = activeAccordion === 'rapat-koordinasi' ? null : 'rapat-koordinasi'" class="flex w-full items-center justify-between gap-4 bg-gray-50 px-4 py-4 text-left font-semibold text-gray-900 transition hover:bg-secondary sm:px-5" :aria-expanded="activeAccordion === 'rapat-koordinasi'">
+                                        <span>Standar Operasional Rapat Koordinasi</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition-transform" :class="activeAccordion === 'rapat-koordinasi' ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    <div x-show="activeAccordion === 'rapat-koordinasi'" x-transition class="border-t border-gray-200 p-3 sm:p-5">
+                                        <div class="overflow-hidden rounded-xl border border-gray-200">
+                                            <img src="/images/standaroperasional/rapat-koordinasi.png" alt="Mekanisme Rapat Koordinasi" class="h-auto w-full">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="px-0 lg:px-4">
-                                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Standar Operasional Pelaporan</h3>
-                                    <div class="mt-4 rounded-xl overflow-hidden border border-gray-200">
-                                        <img src="/images/standaroperasional/pengaduan-pelayanan-publik.png" alt="Mekanisme Pelaporan" class="w-full h-auto">
+                                <div class="overflow-hidden rounded-xl border border-gray-200">
+                                    <button type="button" @click="activeAccordion = activeAccordion === 'pelaporan' ? null : 'pelaporan'" class="flex w-full items-center justify-between gap-4 bg-gray-50 px-4 py-4 text-left font-semibold text-gray-900 transition hover:bg-secondary sm:px-5" :aria-expanded="activeAccordion === 'pelaporan'">
+                                        <span>Standar Operasional Pelaporan</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition-transform" :class="activeAccordion === 'pelaporan' ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    <div x-show="activeAccordion === 'pelaporan'" x-transition class="border-t border-gray-200 p-3 sm:p-5">
+                                        <div class="overflow-hidden rounded-xl border border-gray-200">
+                                            <img src="/images/standaroperasional/pengaduan-pelayanan-publik.png" alt="Mekanisme Pelaporan" class="h-auto w-full">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -285,8 +311,8 @@
 
                             <div class="rounded-xl border border-gray-200 overflow-hidden">
                                 <iframe
-                                    src="{{ asset('storage/regulasi/Privacy Policy Kemenko PM.pdf') }}"
-                                    class="w-full min-h-[700px]"
+                                    src="{{ asset('storage/regulasi/Privacy Policy Kemenko PM.pdf') }}#zoom=page-width"
+                                    class="w-full h-[calc(100vh-160px)] min-h-300"
                                     frameborder="0"
                                     title="Dokumen Kebijakan Privasi">
                                 </iframe>
