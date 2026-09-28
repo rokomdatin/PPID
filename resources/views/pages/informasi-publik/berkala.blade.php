@@ -94,8 +94,9 @@
                                         ['label' => 'Proses penyimpanan, pendokumentasian, penyediaan, dan pelayanan Informasi Publik', 'file_name' => 'Surat Undangan Rapat Kedua Tim PPID Kemenko PM.pdf'],
                                         ['label' => 'Pelaksana dan/atau Petugas Pelayanan mengelola Informasi untuk memelihara, membuat, dan/atau memutakhirkan Daftar Informasi Publik', 'file_name' => 'Notulensi Rapat PPID 2 Desember 2025.pdf'],
                                         ['label' => 'Anggaran Rapat PPID', 'file_name' => 'RAB 2026 Komdatin.pdf'],
+                                        ['label' => 'Bimbingan Teknis/Pelatihan-pelatihan kepada pengelola PPID', 'file_name' => 'Laporan Bimtek Keterbukaan Informasi Publik.pdf'],
                                         ['label' => 'Meja dan Ruang Layanan Informasi', 'file_name' => 'Meja dan Ruang Layanan Informasi.pdf'],
-                                        ['label' => 'Fasilitasi layanan informasi bagi Penyandang Disabilitas', 'file_name' => 'Fasilitasi Layanan Informasi bagi Penyandang Disabilitas.pdf'],
+                                        ['label' => 'Fasilitasi layanan informasi bagi Penyandang Disabilitas', 'file_name' => 'Fasilitasi Layanan Informasi bagi Penyandang Disabilitas.pdf']
                                     ]
                                 ],
                                 [
