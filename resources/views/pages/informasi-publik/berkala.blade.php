@@ -91,6 +91,7 @@
                                     'kategori' => 'Ringkasan laporan akses Informasi Publik',
                                     'items' => [
                                         ['label' => 'Ringkasan laporan akses Informasi Publik PPID Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE18.pdf'],
+                                        ['label' => 'Laporan Layanan Informasi Publik Tahun 2025', 'file_name' => 'Laporan Tahunan PPID Kemenko PM Tahun 2025.pdf'],
                                         ['label' => 'Proses penyimpanan, pendokumentasian, penyediaan, dan pelayanan Informasi Publik', 'file_name' => 'Surat Undangan Rapat Kedua Tim PPID Kemenko PM.pdf'],
                                         ['label' => 'Pelaksana dan/atau Petugas Pelayanan mengelola Informasi untuk memelihara, membuat, dan/atau memutakhirkan Daftar Informasi Publik', 'file_name' => 'Notulensi Rapat PPID 2 Desember 2025.pdf'],
                                         ['label' => 'Anggaran Rapat PPID', 'file_name' => 'RAB 2026 Komdatin.pdf'],
@@ -102,7 +103,7 @@
                                 [
                                     'kategori' => 'Informasi tentang peraturan, keputusan, dan/atau kebijakan yang mengikat dan/atau berdampak bagi publik yang dikeluarkan oleh Kemenko PM',
                                     'items' => [
-                                        ['label' => 'Daftar Peraturan perundang-undangan, keputusan, dan/atau kebijakan yang telah disahkan atau ditetapkan', 'url'   => 'https://jdih.pemberdayaan.go.id/']
+                                        ['label' => 'Daftar Peraturan perundang-undangan, keputusan, dan/atau kebijakan yang telah disahkan atau ditetapkan', 'url'   => 'https://jdih-dev.pemberdayaan.go.id/']
                                     ]
                                 ],
                                 [
