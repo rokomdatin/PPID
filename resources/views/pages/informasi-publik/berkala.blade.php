@@ -90,7 +90,12 @@
                                 [
                                     'kategori' => 'Ringkasan laporan akses Informasi Publik',
                                     'items' => [
-                                        ['label' => 'Ringkasan laporan akses Informasi Publik PPID Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE18.pdf']
+                                        ['label' => 'Ringkasan laporan akses Informasi Publik PPID Kemenko PM', 'file_name' => 'TODO: GANTI_NAMA_FILE18.pdf'],
+                                        ['label' => 'Proses penyimpanan, pendokumentasian, penyediaan, dan pelayanan Informasi Publik', 'file_name' => 'Surat Undangan Rapat Kedua Tim PPID Kemenko PM.pdf'],
+                                        ['label' => 'Pelaksana dan/atau Petugas Pelayanan mengelola Informasi untuk memelihara, membuat, dan/atau memutakhirkan Daftar Informasi Publik', 'file_name' => 'Notulensi Rapat PPID 2 Desember 2025.pdf'],
+                                        ['label' => 'Anggaran Rapat PPID', 'file_name' => 'RAB 2026 Komdatin.pdf'],
+                                        ['label' => 'Meja dan Ruang Layanan Informasi', 'file_name' => 'Meja dan Ruang Layanan Informasi.pdf'],
+                                        ['label' => 'Fasilitasi layanan informasi bagi Penyandang Disabilitas', 'file_name' => 'Fasilitasi Layanan Informasi bagi Penyandang Disabilitas.pdf'],
                                     ]
                                 ],
                                 [
