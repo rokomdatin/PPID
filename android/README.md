@@ -1,7 +1,7 @@
 # PPID Kemenko PM — Android WebView (Uji Internal KIP 2026)
 
-**Versi internal**: 0.1.1-internal (build 2).
-\n**Status**: Prototipe aplikasi Android untuk pengujian internal/bukti dukung KIP. **Bukan** aplikasi produksi, **belum** diterbitkan di Google Play Store, dan **bukan** pengganti portal PPID.
+**Versi internal**: 0.1.2-internal (build 3).
+**Status**: Prototipe aplikasi Android untuk pengujian internal/bukti dukung KIP. **Bukan** aplikasi produksi, **belum** diterbitkan di Google Play Store, dan **bukan** pengganti portal PPID.
 
 **Website sumber**: `https://ppid.pemberdayaan.go.id/`.
 
@@ -45,3 +45,7 @@ ID aplikasi prototipe adalah `id.go.pemberdayaan.ppid`. Sebelum publikasi final,
 Ikuti checklist [`bukti-kip/CHECKLIST-PENGUJIAN.md`](../bukti-kip/CHECKLIST-PENGUJIAN.md). Bukti minimal mencakup APK beserta hash SHA256, tanggal build, perangkat/versi Android, screenshot layanan yang benar-benar berjalan, dokumentasi uji formulir dan PDF, serta berita acara pengujian yang ditandatangani bila diperlukan.
 
 **Penting:** Apk yang dapat diinstal saja belum otomatis memenuhi indikator KIP; rujuk instrumen SAQ 2026 untuk indikator yang diklaim. Jangan mengklaim aplikasi telah tersedia untuk publik sebelum benar-benar dipublikasikan/distribusikan sesuai keputusan instansi.
+
+## Logo Android
+
+Ikon launcher menggunakan aset resmi `Logo Kemenko BARU_Full.png` dari Library Kemenko PM yang identik dengan `public/images/logokemenkobaru.png` pada website (Git blob `8bebc5e94f54b3a3efb254c9536bfa1821d3f38e`). Ukuran dan posisi logo disesuaikan menggunakan adaptive icon foreground, tanpa mengubah bentuk atau warna emblem asli. Latar ikon putih agar logo kontras.
