@@ -37,7 +37,7 @@
                                     'kategori' => 'Informasi Khusus Lainnya yang Berkaitan Langsung dengan Hak-Hak Masyarakat',
                                         'items' => [
                                         ['label' => 'SP4N Lapor!', 'url'   => 'https://www.lapor.go.id/'],
-                                        ['label' => 'JDIH', 'url'   => 'https://jdih-dev.pemberdayaan.go.id/'],
+                                        ['label' => 'JDIH', 'url'   => 'https://jdih.pemberdayaan.go.id/'],
                                         ['label' => 'e-LHKPN', 'url'   => 'https://elhkpn.kpk.go.id/portal/user/login#'],
                                         ['label' => 'Dashboard Agregat DTSEN', 'url'   => 'https://dashboard-dtsen.pemberdayaan.go.id/'],
                                         ['label' => 'Dashboard Desa Prioritas', 'url'   => 'https://desaprioritas.pemberdayaan.go.id/'],
@@ -103,7 +103,7 @@
                                 [
                                     'kategori' => 'Informasi tentang peraturan, keputusan, dan/atau kebijakan yang mengikat dan/atau berdampak bagi publik yang dikeluarkan oleh Kemenko PM',
                                     'items' => [
-                                        ['label' => 'Daftar Peraturan perundang-undangan, keputusan, dan/atau kebijakan yang telah disahkan atau ditetapkan', 'url'   => 'https://jdih-dev.pemberdayaan.go.id/']
+                                        ['label' => 'Daftar Peraturan perundang-undangan, keputusan, dan/atau kebijakan yang telah disahkan atau ditetapkan', 'url'   => 'https://jdih.pemberdayaan.go.id/']
                                     ]
                                 ],
                                 [

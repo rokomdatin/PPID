@@ -346,6 +346,9 @@
                                 Keberatan dapat diajukan dengan mengisi formulir keberatan yang tersedia di kantor PPID atau website PPID. 
                                 Formulir harus dilengkapi dengan alasan keberatan, identitas pemohon, dan dokumen pendukung terkait. 
                                 Keberatan akan diproses dan ditanggapi dalam jangka waktu 30 hari kerja oleh atasan PPID.
+                                <br><br>
+                                Pemohon Informasi Publik dan/atau kuasanya yang merasa tidak puas atas tanggapan keberatan yang diberikan oleh Atasan PPID berhak
+                                mengajukan permohonan penyelesaian sengketa Informasi Publik kepada Komisi Informasi dalam jangka waktu paling lama 14 (empat belas) hari kerja sejak diterimanya surat tanggapan atas keberatan tersebut.
                             </div>
                         </div>
                     </div>

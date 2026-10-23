@@ -38,6 +38,7 @@
                         <a href="{{ url('/informasi-publik/berkala') }}" class="dropdown-item">Informasi Berkala</a>
                         <a href="{{ url('/informasi-publik/setiapsaat') }}" class="dropdown-item">Informasi Tersedia Setiap Saat</a>
                         <a href="{{ url('/informasi-publik/sertamerta') }}" class="dropdown-item">Informasi Serta Merta</a>
+                        <a href="{{ url('/informasi-publik/pbj') }}" class="dropdown-item">Informasi PBJ</a>
                     </div>
                 </div>
                 
@@ -133,6 +134,11 @@
                             @click="mobileMenuOpen = false"
                             class="block py-2.5 text-white/80 hover:text-white transition-colors">
                             Informasi Serta Merta
+                        </a>
+                        <a href="{{ url('/informasi-publik/pbj') }}"
+                            @click="mobileMenuOpen = false"
+                            class="block py-2.5 text-white/80 hover:text-white transition-colors">
+                            Informasi PBJ
                         </a>
                     </div>
                 </div>

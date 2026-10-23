@@ -30,7 +30,7 @@
                                 [
                                     'kategori' => 'Informasi Tentang Peraturan, Keputusan Dan/atau Kebijakan Kemenko PM',
                                     'items' => [
-                                        ['label' => 'Daftar peraturan, keputusan dan/atau kebijakan yang telah diterbitkan di Kemenko PM', 'url'   => 'https://jdih-dev.pemberdayaan.go.id/'],
+                                        ['label' => 'Daftar peraturan, keputusan dan/atau kebijakan yang telah diterbitkan di Kemenko PM', 'url'   => 'https://jdih.pemberdayaan.go.id/'],
                                         ['label' => 'Daftar rancangan dan tahap pembentukan peraturan perundang-undangan, keputusan, dan/atau kebijakan yang sedang dalam proses pembuatan', 'file_name' => 'Daftar Rancangan Peraturan Keputusan Kebijakan yang Sedang Diproses.pdf']
                                     ]
                                 ],
