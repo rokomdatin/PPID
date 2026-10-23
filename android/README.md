@@ -1,6 +1,6 @@
 # PPID Kemenko PM — Android WebView (Uji Internal KIP 2026)
 
-**Versi internal**: 0.1.2-internal (build 3).
+**Versi internal**: 0.1.3-internal (build 4).
 **Status**: Prototipe aplikasi Android untuk pengujian internal/bukti dukung KIP. **Bukan** aplikasi produksi, **belum** diterbitkan di Google Play Store, dan **bukan** pengganti portal PPID.
 
 **Website sumber**: `https://ppid.pemberdayaan.go.id/`.
@@ -9,13 +9,13 @@
 
 - Native Android shell, Java 17, Android SDK 35, min Android 10 (API 29).
 - WebView yang memuat website resmi PPID dengan dukungan JavaScript, DOM storage, cookie sesi/CSRF.
-- Navigasi Android: Beranda, Informasi Publik, Permohonan, Keberatan, serta tombol kembali. Header website tetap ditampilkan; header native duplikat dihapus. Muat ulang halaman dengan menarik konten dari atas ke bawah (pull-to-refresh).
+- Navigasi Android: Beranda, Informasi Publik, Permohonan, Keberatan, serta tombol kembali. Semua tab memiliki ikon dan teks serta penanda halaman aktif. Header website tetap ditampilkan; header native duplikat dihapus. Muat ulang halaman dengan menarik konten dari atas ke bawah (pull-to-refresh).
 - Domain navigasi internal dibatasi `ppid.pemberdayaan.go.id`; tautan eksternal dibuka di aplikasi eksternal.
 - HTTP tidak diterima, kesalahan sertifikat HTTPS dihentikan, mixed content diblokir.
 - File informasi publik diunduh melalui Android DownloadManager.
 - Pratinjau PDF informasi publik dibuka menggunakan Android `PdfRenderer` (tanpa server/API baru).
 - Pemilih file Android untuk kebutuhan formulir pada pengembangan mendatang.
-- Tampilan memakai warna identitas #77212F (marun) dan #243669 (biru tua); ikon saat ini **sementara** dan harus diganti logo resmi berizin sebelum publikasi.
+- Tampilan memakai warna identitas #77212F (marun) dan #243669 (biru tua); ikon launcher memakai logo asli resmi Kemenko PM untuk versi uji.
 
 ## Keterbatasan versi ini
 

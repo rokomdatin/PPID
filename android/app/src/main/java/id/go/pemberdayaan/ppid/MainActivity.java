@@ -7,12 +7,15 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.content.res.ColorStateList;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Gravity;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.CookieManager;
@@ -28,6 +31,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.URLUtil;
 import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +50,9 @@ public final class MainActivity extends Activity {
     private ProgressBar progressBar;
     private TextView errorBanner;
     private ValueCallback<Uri[]> uploadCallback;
+    private final LinearLayout[] navigationTabs = new LinearLayout[4];
+    private final ImageView[] navigationIcons = new ImageView[4];
+    private final TextView[] navigationLabels = new TextView[4];
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -99,24 +106,87 @@ public final class MainActivity extends Activity {
                 new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
 
         LinearLayout nav = new LinearLayout(this);
+        nav.setOrientation(LinearLayout.HORIZONTAL);
+        nav.setGravity(Gravity.CENTER_VERTICAL);
+        nav.setPadding(dp(4), dp(4), dp(4), dp(4));
         nav.setBackgroundColor(Color.rgb(36, 54, 105));
-        addTab(nav, "Beranda", "/");
-        addTab(nav, "Informasi", "/informasi-publik/berkala");
-        addTab(nav, "Permohonan", "/layanan-informasi/permohonan-informasi");
-        addTab(nav, "Keberatan", "/layanan-informasi/pengajuan-keberatan");
-        root.addView(nav, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(62)));
+        addTab(nav, 0, R.drawable.ppid_nav_home, "Beranda", "/");
+        addTab(nav, 1, R.drawable.ppid_nav_information, "Informasi", "/informasi-publik/berkala");
+        addTab(nav, 2, R.drawable.ppid_nav_request, "Permohonan", "/layanan-informasi/permohonan-informasi");
+        addTab(nav, 3, R.drawable.ppid_nav_objection, "Keberatan", "/layanan-informasi/pengajuan-keberatan");
+        root.addView(nav, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(74)));
         setContentView(root);
+        updateNavigationSelection(BASE);
     }
 
-    private void addTab(LinearLayout nav, String label, String path) {
-        TextView tab = new TextView(this);
-        tab.setText(label);
+    private void addTab(LinearLayout nav, int index, int drawableId, String label, String path) {
+        LinearLayout tab = new LinearLayout(this);
+        tab.setOrientation(LinearLayout.VERTICAL);
         tab.setGravity(Gravity.CENTER);
-        tab.setTextColor(Color.WHITE);
-        tab.setTextSize(12);
+        tab.setClickable(true);
+        tab.setFocusable(true);
+
+        ImageView icon = new ImageView(this);
+        icon.setImageResource(drawableId);
+        icon.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        LinearLayout.LayoutParams iconParams = new LinearLayout.LayoutParams(dp(24), dp(24));
+        iconParams.bottomMargin = dp(4);
+        tab.addView(icon, iconParams);
+
+        TextView title = new TextView(this);
+        title.setText(label);
+        title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11);
+        title.setGravity(Gravity.CENTER);
+        title.setIncludeFontPadding(false);
+        title.setSingleLine(true);
+        tab.addView(title, new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
         tab.setContentDescription("Buka " + label);
-        tab.setOnClickListener(v -> webView.loadUrl(BASE + path));
-        nav.addView(tab, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
+        tab.setOnClickListener(v -> {
+            updateNavigationSelection(BASE + path);
+            webView.loadUrl(BASE + path);
+        });
+        navigationTabs[index] = tab;
+        navigationIcons[index] = icon;
+        navigationLabels[index] = title;
+        nav.addView(tab, new LinearLayout.LayoutParams(0,
+                ViewGroup.LayoutParams.MATCH_PARENT, 1f));
+    }
+
+    private void updateNavigationSelection(String url) {
+        if (url == null) return;
+        Uri uri = Uri.parse(url);
+        if (!HOST.equalsIgnoreCase(uri.getHost())) return;
+        String path = uri.getPath() == null ? "/" : uri.getPath();
+        int current = -1;
+        if (path.equals("/") || path.isEmpty()) {
+            current = 0;
+        } else if (path.startsWith("/informasi-publik/") || path.startsWith("/informasi/")) {
+            current = 1;
+        } else if (path.startsWith("/layanan-informasi/permohonan-informasi")
+                || path.startsWith("/formulir-permohonan")) {
+            current = 2;
+        } else if (path.startsWith("/layanan-informasi/pengajuan-keberatan")) {
+            current = 3;
+        }
+        for (int i = 0; i < navigationTabs.length; i++) {
+            boolean selected = i == current;
+            int tint = selected ? Color.rgb(136, 206, 235) : Color.rgb(205, 213, 230);
+            navigationIcons[i].setImageTintList(ColorStateList.valueOf(tint));
+            navigationLabels[i].setTextColor(selected ? Color.WHITE : Color.rgb(205, 213, 230));
+            navigationTabs[i].setSelected(selected);
+            navigationTabs[i].setContentDescription(
+                    navigationLabels[i].getText() + (selected ? ", aktif" : ", buka menu"));
+            if (selected) {
+                GradientDrawable background = new GradientDrawable();
+                background.setColor(Color.rgb(52, 72, 119));
+                background.setCornerRadius(dp(10));
+                navigationTabs[i].setBackground(background);
+            } else {
+                navigationTabs[i].setBackground(null);
+            }
+        }
     }
 
     private void configureWebView() {
@@ -161,11 +231,13 @@ public final class MainActivity extends Activity {
             @Override
             public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
                 errorBanner.setVisibility(View.GONE);
+                updateNavigationSelection(url);
             }
 
             @Override
             public void onPageFinished(WebView view, String url) {
                 swipeRefreshLayout.setRefreshing(false);
+                updateNavigationSelection(url);
             }
 
             @Override
