@@ -27,7 +27,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.URLUtil;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -35,12 +34,15 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 public final class MainActivity extends Activity {
     private static final String BASE = "https://ppid.pemberdayaan.go.id";
     private static final String HOST = "ppid.pemberdayaan.go.id";
     private static final int FILE_PICKER_REQUEST = 2101;
 
     private WebView webView;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private ProgressBar progressBar;
     private TextView errorBanner;
     private ValueCallback<Uri[]> uploadCallback;
@@ -65,33 +67,6 @@ public final class MainActivity extends Activity {
         root.setBackgroundColor(Color.WHITE);
         root.setFitsSystemWindows(true);
 
-        LinearLayout header = new LinearLayout(this);
-        header.setPadding(dp(16), dp(11), dp(12), dp(11));
-        header.setGravity(Gravity.CENTER_VERTICAL);
-        header.setBackgroundColor(Color.rgb(119, 33, 47));
-
-        LinearLayout titles = new LinearLayout(this);
-        titles.setOrientation(LinearLayout.VERTICAL);
-        TextView title = new TextView(this);
-        title.setText("PPID Kemenko PM");
-        title.setTextSize(18);
-        title.setTextColor(Color.WHITE);
-        title.setTypeface(null, 1);
-        TextView sub = new TextView(this);
-        sub.setText("Layanan Informasi Publik • Aplikasi Uji");
-        sub.setTextSize(11);
-        sub.setTextColor(Color.rgb(235, 226, 228));
-        titles.addView(title);
-        titles.addView(sub);
-        header.addView(titles, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-
-        Button refresh = new Button(this);
-        refresh.setText("⟳");
-        refresh.setTextSize(22);
-        refresh.setContentDescription("Muat ulang halaman");
-        refresh.setOnClickListener(v -> webView.reload());
-        header.addView(refresh, new LinearLayout.LayoutParams(dp(54), dp(48)));
-        root.addView(header);
 
         progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
         progressBar.setMax(100);
@@ -110,7 +85,18 @@ public final class MainActivity extends Activity {
 
         webView = new WebView(this);
         webView.setBackgroundColor(Color.WHITE);
-        root.addView(webView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
+
+        // The website already renders the official PPID header.
+        // Keep only native bottom navigation and enable pull-to-refresh.
+        swipeRefreshLayout = new SwipeRefreshLayout(this);
+        swipeRefreshLayout.setColorSchemeColors(Color.rgb(119, 33, 47), Color.rgb(36, 54, 105));
+        swipeRefreshLayout.setOnChildScrollUpCallback((parent, child) -> webView.canScrollVertically(-1));
+        swipeRefreshLayout.setOnRefreshListener(() -> webView.reload());
+        swipeRefreshLayout.addView(webView,
+                new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT));
+        root.addView(swipeRefreshLayout,
+                new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
 
         LinearLayout nav = new LinearLayout(this);
         nav.setBackgroundColor(Color.rgb(36, 54, 105));
@@ -166,7 +152,10 @@ public final class MainActivity extends Activity {
 
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-                if (request.isForMainFrame()) errorBanner.setVisibility(View.VISIBLE);
+                if (request.isForMainFrame()) {
+                    errorBanner.setVisibility(View.VISIBLE);
+                    swipeRefreshLayout.setRefreshing(false);
+                }
             }
 
             @Override
@@ -175,8 +164,14 @@ public final class MainActivity extends Activity {
             }
 
             @Override
+            public void onPageFinished(WebView view, String url) {
+                swipeRefreshLayout.setRefreshing(false);
+            }
+
+            @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
                 handler.cancel(); // Never bypass invalid certificates.
+                swipeRefreshLayout.setRefreshing(false);
                 errorBanner.setVisibility(View.VISIBLE);
                 Toast.makeText(MainActivity.this, "Koneksi HTTPS tidak aman.", Toast.LENGTH_LONG).show();
             }
