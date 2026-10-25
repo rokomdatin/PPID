@@ -69,6 +69,28 @@ Route::get('/informasi-publik/berkala', function () {
     return view('pages.informasi-publik.berkala');
 })->name('informasi.berkala');
 
+Route::get('/informasi-publik/pbj', function () {
+    return view('pages.informasi-publik.pbj', ['menus' => config('menu_pengadaan')]);
+})->name('informasi.pbj');
+
+Route::get('/informasi-publik/pbj/daftar', function () {
+    return view('pages.informasi-publik.pbj-placeholder', [
+        'pageTitle' => 'Daftar Pengadaan Barang dan Jasa',
+    ]);
+})->name('informasi.pbj.daftar');
+
+Route::get('/informasi-publik/pbj/dokumen', function () {
+    return view('pages.informasi-publik.pbj-placeholder', [
+        'pageTitle' => 'Dokumen Pengadaan Barang dan Jasa',
+    ]);
+})->name('informasi.pbj.dokumen');
+
+Route::get('/informasi-publik/pbj/informasi-grafis', function () {
+    return view('pages.informasi-publik.pbj-placeholder', [
+        'pageTitle' => 'Informasi Grafis',
+    ]);
+})->name('informasi.pbj.informasi-grafis');
+
 Route::get('/informasi-publik/sertamerta', function () {
     return view('pages.informasi-publik.sertamerta');
 })->name('informasi.sertamerta');

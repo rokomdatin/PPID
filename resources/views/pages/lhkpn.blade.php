@@ -60,10 +60,22 @@
                         'file_name' => 'LHKPN 2024_Abdul Muhaimin Iskandar.pdf'
                     ],
                     [
+                        'tahun' => '2025',
+                        'nama' => 'Abdul Muhaimin Iskandar',
+                        'jabatan' => 'Menteri Koordinator Bidang Pemberdayaan Masyarakat',
+                        'file_name' => 'LHKPN 2025_Abdul Muhaimin Iskandar.pdf'
+                    ],
+                    [
                         'tahun' => '2024',
                         'nama' => 'Andie Megantara',
                         'jabatan' => 'Sekretaris Kementerian Koordinator Bidang Pemberdayaan Masyarakat',
                         'file_name' => 'LHKPN 2024_ANDIE MEGANTARA.pdf'
+                    ],
+                    [
+                        'tahun' => '2025',
+                        'nama' => 'Andie Megantara',
+                        'jabatan' => 'Sekretaris Kementerian Koordinator Bidang Pemberdayaan Masyarakat',
+                        'file_name' => 'LHKPN 2025_ANDIE MEGANTARA.pdf'
                     ],
                     [
                         'tahun' => '2025',
@@ -79,6 +91,12 @@
                     ],
                     [
                         'tahun' => '2025',
+                        'nama' => 'Abdul Haris',
+                        'jabatan' => 'Deputi Bidang Koordinasi Pemberdayaan Masyarakat Desa, Daerah Tertinggal, dan Daerah Tertentu',
+                        'file_name' => 'LHKPN 2025_ABDUL HARIS.pdf'
+                    ],
+                    [
+                        'tahun' => '2025',
                         'nama' => 'Sugeng Bahagijo',
                         'jabatan' => 'Staf Ahli Menteri Bidang Pembangunan Ekonomi dan Digitalisasi',
                         'file_name' => 'LHKPN 2025_SUGENG BAHAGIJO.pdf'
@@ -88,6 +106,12 @@
                         'nama' => 'Dyah Tri Kumolosari',
                         'jabatan' => 'Plt. Deputi Bidang Koordinasi Peningkatan Kesejahteraan Sosial dan Staf Ahli Menteri Bidang Hubungan Antar Lembaga dan Masyarakat',
                         'file_name' => 'LHKPN 2024_DYAH TRI KUMOLOSARI.pdf'
+                    ],
+                    [
+                        'tahun' => '2025',
+                        'nama' => 'Dyah Tri Kumolosari',
+                        'jabatan' => 'Plt. Deputi Bidang Koordinasi Peningkatan Kesejahteraan Sosial dan Staf Ahli Menteri Bidang Hubungan Antar Lembaga dan Masyarakat',
+                        'file_name' => 'LHKPN 2025_DYAH TRI KUMOLOSARI.pdf'
                     ]
                 ];
             @endphp

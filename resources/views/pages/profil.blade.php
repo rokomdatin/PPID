@@ -204,10 +204,24 @@
                             <h2 class="text-xl font-bold">Struktur Organisasi</h2>
                         </div>
                         <div class="p-6">
-                            <div class="p-8 mt-8 flex flex-col items-center justify-center">
-                                <img src="{{ asset('images/strukturdiagramppid.png') }}" 
+                            <div class="p-2 mt-2 flex flex-col items-center justify-center">
+                                <img src="{{ asset('images/strukturorganisasi.png') }}" 
                                     alt="Gambar Struktur Organisasi" 
                                     class="max-auto object-contain">
+                            </div>
+                            <div class="mt-8">
+                                <h3 class="mb-4 rounded-lg border-l-4 border-primary bg-secondary/50 px-4 py-3 text-lg font-bold text-primary">Informasi Publik PPID Pelaksana</h3>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <a href="{{ route('informasi.berkala') }}" class="rounded-lg border border-primary bg-primary p-3 text-center font-semibold leading-snug text-white transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+                                        Informasi Berkala
+                                    </a>
+                                    <a href="{{ route('informasi.setiapsaat') }}" class="rounded-lg border border-primary bg-primary p-3 text-center font-semibold leading-snug text-white transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+                                        Informasi Setiap Saat
+                                    </a>
+                                    <a href="{{ route('informasi.sertamerta') }}" class="rounded-lg border border-primary bg-primary p-3 text-center font-semibold leading-snug text-white transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+                                        Informasi Serta Merta
+                                    </a>
+                                </div>
                             </div>
                             <!-- <div class="p-8 mt-8 text-center border-2 border-gray-300 border-dashed rounded-lg bg-gray-50">
                                 <svg class="w-16 h-16 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -21,7 +21,7 @@
         </p>
         <h1 class="text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl xl:text-6xl">
             PPID Kementerian Koordinator<br>
-            <span class="text-secondary">Pemberdayaan Masyarakat</span>
+            <span class="text-secondary">Bidang Pemberdayaan Masyarakat</span>
         </h1>
         <div class="flex flex-col items-center justify-center gap-4 mt-8 sm:flex-row">
             <a href="{{ route('formulir-permohonan') }}" class="btn-primary">

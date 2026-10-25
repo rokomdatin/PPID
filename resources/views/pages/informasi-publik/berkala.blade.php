@@ -49,7 +49,7 @@
                                         ['label' => 'Rencana Strategis Kemenko PM', 'file_name' => 'Buku Renstra 2025-2029.pdf'],
                                         ['label' => 'Rencana Kerja Kemenko PM', 'subitems' => [
                                                 ['label' => 'Renja 2025', 'file_name' => 'Renja 2025.pdf'],
-                                                ['label' => 'Renja 2026', 'file_name' => 'Renja 2026.pdf'],
+                                                ['label' => 'Renja 2026', 'file_name' => 'Ringkasan Renja 2026.pdf'],
                                             ]],
                                         
                                         ['label' => 'Kegiatan Kemenko PM', 'file_name' => 'Kegiatan Kemenko PM Tahun 2026.pdf']
@@ -71,7 +71,7 @@
                                             ]],
                                         ['label' => 'Rencana Kerja dan Anggaran (RKA)', 'subitems' => [
                                                 ['label' => 'RKA 2025', 'file_name' => 'TODO: GANTI_NAMA_FILE14-2024.pdf'],
-                                                ['label' => 'RKA 2026', 'file_name' => 'RKA KL Pagu Alokasi Anggaran 2026.pdf'],
+                                                ['label' => 'RKA 2026', 'file_name' => 'Ringkasan RKAKL 2026.pdf'],
                                             ]],
                                         ['label' => 'Informasi realisasi atau penyerapan penggunaan keuangan Tahun 2026', 'subitems' => [
                                                 ['label' => 'Laporan Realisasi Anggaran 2025', 'file_name' => 'TODO: GANTI_NAMA_FILE14-2024.pdf'],
@@ -84,6 +84,14 @@
                                     'items' => [
                                         [
                                             'label'    => 'Laporan Kinerja Tahunan', 'file_name' => 'Laporan Capaian Kinerja Kemenko PM 2026.pdf'
+                                        ]
+                                    ]
+                                ],
+                                [
+                                    'kategori' => 'Tata Kelola Layanan Informasi dan Kebijakan PPID',
+                                    'items' => [
+                                        [
+                                            'label'    => 'Strategi dan Metode Pembinaan, Pengawasan, Evaluasi, dan Monitoring atas Pelaksanaan Kebijakan Informasi Publik', 'file_name' => 'Strategi dan Metode Pelaksanaan Kebijakan PPID.pdf'
                                         ]
                                     ]
                                 ],
