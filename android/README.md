@@ -1,7 +1,9 @@
 # PPID Kemenko PM — Android WebView (Uji Internal KIP 2026)
 
-**Versi internal**: 0.1.3-internal (build 4).
+**Versi internal**: 0.1.4-internal (build 5).
 **Status**: Prototipe aplikasi Android untuk pengujian internal/bukti dukung KIP. **Bukan** aplikasi produksi, **belum** diterbitkan di Google Play Store, dan **bukan** pengganti portal PPID.
+
+**Label aplikasi terpasang**: `PPID Kemenko PM` (tanpa kata “Uji”). Status build tetap untuk uji internal dan tidak untuk publikasi Play Store.
 
 **Website sumber**: `https://ppid.pemberdayaan.go.id/`.
 
