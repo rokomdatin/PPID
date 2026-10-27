@@ -365,7 +365,7 @@ public final class MainActivity extends Activity {
         } else {
             new AlertDialog.Builder(this)
                     .setTitle("Tutup PPID?")
-                    .setMessage("Keluar dari aplikasi uji PPID Kemenko PM?")
+                    .setMessage("Apakah Anda yakin ingin keluar dari PPID Kemenko PM?")
                     .setNegativeButton("Batal", null)
                     .setPositiveButton("Keluar", (d, which) -> finish())
                     .show();

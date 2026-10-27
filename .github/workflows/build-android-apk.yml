@@ -50,7 +50,7 @@ jobs:
       - name: Upload signed debug APK (internal only)
         uses: actions/upload-artifact@v4
         with:
-          name: PPID-KemenkoPM-Android-Uji
+          name: PPID-KemenkoPM-Android-Internal
           path: |
             android/app/build/outputs/apk/debug/app-debug.apk
             android/app/build/outputs/apk/debug/SHA256SUMS.txt
